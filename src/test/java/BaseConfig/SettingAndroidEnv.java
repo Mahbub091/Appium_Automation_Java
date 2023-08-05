@@ -3,15 +3,13 @@ package BaseConfig;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.remote.AutomationName;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.concurrent.TimeUnit;
 
-public class SetUp {
+public class SettingAndroidEnv {
 
     public AndroidDriver driver;
 
@@ -26,12 +24,15 @@ public class SetUp {
 
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
 
+        System.out.println("Starting Android App through APPIUM 2.0 Server");
+
         return driver;
     }
 
     @AfterTest
     public void closeApp() {
         driver.quit();
+        System.out.println("Test Execution completed successfully");
     }
 
 
