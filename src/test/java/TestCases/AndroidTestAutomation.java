@@ -1,15 +1,20 @@
 package TestCases;
 
-import BaseConfig.SetUp;
+import BaseConfig.SettingAndroidEnv;
+import PageManagement.HomePage;
+import Utility.TestUtils;
+import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
-public class AndroidTestAutomation  extends SetUp {
+public class AndroidTestAutomation  extends SettingAndroidEnv {
 
-    @Test
-    public void test01() throws InterruptedException {
-        System.out.println("Starting Android App through APPIUM 2.0 Server");
-        Thread.sleep(4000);
+    @Test (testName = "Test01", description = " Android App Automation")
+    public void test01() {
 
-        System.out.println("Test Execution completed successfully");
+        TestUtils testutils = new TestUtils(driver);
+        HomePage homePage = new HomePage(driver);
+        testutils.wait(2);
+
+        homePage.clickingOnAppElement();
     }
 }

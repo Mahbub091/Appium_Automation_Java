@@ -50,6 +50,13 @@
             <artifactId>log4j-api</artifactId>
             <version>${log4japi.version}</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.36</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -84,10 +91,29 @@
                         </property>
                     </properties>
                     <suiteXmlFiles>
-                        <suiteXmlFile>${suite-xml}</suiteXmlFile>
+                        <suiteXmlFile>TestSuite/appTestSuite.xml</suiteXmlFile>
                     </suiteXmlFiles>
                     <!--suppress UnresolvedMavenProperty -->
                     <argLine>${argLine}</argLine>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>3.2.0</version>
+                <configuration>
+                    <filesets>
+                        <fileset>
+                            <directory>${basedir}/reports</directory>
+                            <includes>
+                                <!--                  <include>**/*.tmp</include>-->
+                            </includes>
+                            <excludes>
+                                <exclude>*.log</exclude>
+                                <exclude>**/*.log</exclude>
+                            </excludes>
+                            <followSymlinks>false</followSymlinks>
+                        </fileset>
+                    </filesets>
                 </configuration>
             </plugin>
         </plugins>
