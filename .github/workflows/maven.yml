@@ -27,7 +27,7 @@ jobs:
         with:
           node-version: "16"
       - run: |
-          npm install -g appium@v1.22
+          npm install -g appium@latest
           appium -v
           appium &>/dev/null &
 
