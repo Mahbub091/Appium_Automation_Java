@@ -44,6 +44,7 @@ public class HomePage {
     public void clickingOnAppElement(){
         testUtils.elementIsDisplayed(tshirtBox, time_out_min);
         testUtils.clickingOnElement(tshirtBox);
+        testUtils.wait(1);
         testUtils.verifyText(tshirtText, "Sauce Labs Backpack");
 
     }
