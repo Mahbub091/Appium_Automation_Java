@@ -4,7 +4,7 @@
     <test name = "Test">
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="TestCases.AndroidTestAutomation">
+            <class name="android.TestCases.AndroidTestAutomation">
                 <methods>
                     <include name="test01" />
                 </methods>

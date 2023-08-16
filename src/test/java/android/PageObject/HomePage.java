@@ -1,74 +1,79 @@
-package android.PageManagement;
+package android.PageObject;
 
-import BaseConfig.SettingAndroidEnv;
-import android.Utility.TestUtils;
-import io.appium.java_client.AppiumBy;
+import Utility.TestUtils;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.nativekey.AndroidKey;
 import io.appium.java_client.android.nativekey.KeyEvent;
-import io.appium.java_client.pagefactory.AndroidFindBy;
-import io.appium.java_client.pagefactory.iOSXCUITFindBy;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class HomePage extends SettingAndroidEnv {
+public class HomePage {
     int pause_Short = 1;
     int pause_long = 2;
     int pause_extended = 3;
 
-    WebDriver driver;
-
-    public static AndroidDriver andro;
+    private AndroidDriver driver;
 
     TestUtils testUtils;
 
-    public HomePage(WebDriver driver) {
+    public HomePage(AndroidDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
         testUtils = new TestUtils(driver);
+
     }
 
     /**
      * Our Elements Will Be Stored Here.
      */
 
-    @FindBy(xpath = "(//android.widget.ImageView) [5]")
-    WebElement tshirtBox;
+    @FindBy(xpath = "//android.widget.TextView[@text='Accessibility']")
+    WebElement accessibilityMenu;
 
-    @FindBy(xpath = "(//android.widget.TextView) [1]")
-    WebElement tshirtText;
+    @FindBy(xpath = "//android.widget.TextView[@text='Animation']")
+    WebElement animationMenu;
 
-    @FindBy(xpath = "//android.view.ViewGroup[@content-desc='open menu']/android.widget.ImageView")
-    WebElement menuButton;
+    @FindBy(xpath = "//android.widget.TextView[@text='App']")
+    WebElement appMenu;
 
-    @FindBy(linkText = "Catalog")
-    WebElement webviewMenu;
 
-    @iOSXCUITFindBy(accessibility = "messageSaveBtn")
-    @AndroidFindBy(xpath = "//android.view.ViewGroup[@content-desc='messageSaveBtn']")
+    @FindBy(xpath = "//android.widget.TextView[@text='contect']")
+    WebElement contentMenu;
 
 
 
 
-    public void clickingOnAppElement(){
-        testUtils.elementIsDisplayed(tshirtBox, 60);
-        testUtils.clickingOnElement(tshirtBox);
-        testUtils.wait(1);
-        testUtils.verifyText(tshirtText, "Sauce Labs Backpack");
 
+
+
+//        driver.findElement(By.xpath("//android.widget.TextView[@text='Content']")).click();
+//        driver.pressKey(new KeyEvent().withKey(AndroidKey.BACK));
+//        driver.findElement(By.xpath("//android.widget.TextView[@text='Graphics']")).click();
+//        driver.pressKey(new KeyEvent().withKey(AndroidKey.BACK));
+//        driver.findElement(By.xpath("//android.widget.TextView[@text='Media']")).click();
+//        driver.pressKey(new KeyEvent().withKey(AndroidKey.BACK));
+//        driver.findElement(By.xpath("//android.widget.TextView[@text='NFC']")).click();
+//        driver.pressKey(new KeyEvent().withKey(AndroidKey.BACK));
+//        driver.findElement(By.xpath("//android.widget.TextView[@text='OS']")).click();
+//        driver.pressKey(new KeyEvent().withKey(AndroidKey.BACK));
+//        driver.findElement(By.xpath("//android.widget.TextView[@text='Preference']")).click();
+//        driver.pressKey(new KeyEvent().withKey(AndroidKey.BACK));
+//        driver.findElement(By.xpath("//android.widget.TextView[@text='Text']")).click();
+//        driver.pressKey(new KeyEvent().withKey(AndroidKey.BACK));
+//        driver.findElement(By.xpath("//android.widget.TextView[@text='Views']")).click();
+//        driver.pressKey(new KeyEvent().withKey(AndroidKey.BACK));
+
+
+    public void androidGoBack() {
+        driver.pressKey(new KeyEvent().withKey(AndroidKey.BACK));
     }
 
-    public void menu() {
-        testUtils.elementIsDisplayed(menuButton, 60);
-        testUtils.wait(pause_Short);
-        testUtils.clickingOnElement(menuButton);
-        testUtils.wait(pause_Short);
-        testUtils.clickingOnElement(menuButton);
-        testUtils.wait(pause_Short);
-        driver.findElement(AppiumBy.accessibilityId("longpress reset app")).isDisplayed();
-        driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector()).click(text());"));
-        andro.pressKey(new KeyEvent().withKey(AndroidKey.BACK));
+    public void verifyingAccessibilityMenu(){
+        testUtils.elementIsDisplayed(accessibilityMenu, 60);
+        testUtils.verifyText(accessibilityMenu, "Accessibility");
+        testUtils.clickingOnElement(accessibilityMenu);
+        testUtils.pressBack();
+
     }
 }
