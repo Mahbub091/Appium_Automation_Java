@@ -1,6 +1,9 @@
-package android.Utility;
+package Utility;
 
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.nativekey.AndroidKey;
+import io.appium.java_client.android.nativekey.KeyEvent;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -10,10 +13,11 @@ import org.testng.Assert;
 import java.time.Duration;
 
 public class TestUtils {
-    WebDriver driver;
 
+    private AndroidDriver driver;
 
-    public TestUtils(WebDriver driver) {
+    public TestUtils(AndroidDriver driver)
+    {
         this.driver = driver;
     }
 
@@ -49,5 +53,9 @@ public class TestUtils {
     public void verifyText(WebElement element, String text) {
         element.getText().equalsIgnoreCase(text);
         Assert.assertEquals(element.getText(), text);
+    }
+
+    public void pressBack() {
+        driver.pressKey(new KeyEvent().withKey(AndroidKey.BACK));
     }
 }
