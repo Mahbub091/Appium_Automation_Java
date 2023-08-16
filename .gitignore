@@ -39,3 +39,4 @@ build/
 
 ###User Defined ignore
 target
+reports/allure-results/**
