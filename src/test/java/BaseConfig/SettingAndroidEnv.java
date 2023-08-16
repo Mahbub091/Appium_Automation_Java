@@ -33,7 +33,7 @@ public class SettingAndroidEnv {
         options.setPlatformName("android");
         options.setAutomationName(AutomationName.ANDROID_UIAUTOMATOR2);
         options.setDeviceName("Google Pixel 6");
-        options.setApp(System.getProperty("user.dir") + "/apps/MyDemoAppRN.apk");
+        options.setApp(System.getProperty("user.dir") + "/apps/ApiDemos.apk");
 
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
 
