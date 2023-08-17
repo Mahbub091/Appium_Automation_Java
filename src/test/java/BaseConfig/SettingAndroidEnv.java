@@ -5,6 +5,7 @@ import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.remote.AutomationName;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
+import io.appium.java_client.service.local.flags.GeneralServerFlag;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
@@ -16,13 +17,18 @@ import java.time.Duration;
 public class SettingAndroidEnv {
     public AndroidDriver driver;
     public AppiumDriverLocalService service;
-
-
     @BeforeTest
     public AndroidDriver setup() throws MalformedURLException {
         service=new AppiumServiceBuilder()
-                .withAppiumJS(new File("C:\\Users\\Md. Mahbubur. Rahman\\AppData\\Roaming\\npm\\node_modules\\appium\\build\\lib\\main.js"))
-                .withIPAddress("127.0.0.1").usingPort(4723).withTimeout(Duration.ofSeconds(300)).build();
+                //.withAppiumJS(new File("C:\\Users\\Md. Mahbubur. Rahman\\AppData\\Roaming\\npm\\node_modules\\appium\\build\\lib\\main.js"))
+                //.usingDriverExecutable(new File("PATH YO YOUR NODE.JS"))
+                .withArgument(GeneralServerFlag.LOCAL_TIMEZONE)
+                .withLogFile(new File(System.getProperty("user.dir") + "/reports/Logs/AppiumLog.txt"))
+                .withIPAddress("127.0.0.1")
+                .usingPort(4723)
+                .withTimeout(Duration.ofSeconds(300))
+                        .build();
+
         service.start();
 
         UiAutomator2Options options = new UiAutomator2Options ();
@@ -41,6 +47,5 @@ public class SettingAndroidEnv {
     @AfterTest
     public void closeApp() {
         driver.quit();
-        System.out.println("Test Execution completed successfully");
     }
 }
