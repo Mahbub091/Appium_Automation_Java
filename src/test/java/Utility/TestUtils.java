@@ -4,6 +4,8 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.nativekey.AndroidKey;
 import io.appium.java_client.android.nativekey.KeyEvent;
+import io.qameta.allure.Allure;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -21,6 +23,11 @@ public class TestUtils {
         this.driver = driver;
     }
 
+    /**
+     * It will pause the test execution for determined  duration(seconds)
+     * @param seconds
+     */
+    @Step("Test execution Paused")
     public void wait(int seconds) {
         try {
             Thread.sleep(seconds * 1000);

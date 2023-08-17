@@ -4,6 +4,8 @@ import Utility.TestUtils;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.nativekey.AndroidKey;
 import io.appium.java_client.android.nativekey.KeyEvent;
+import io.appium.java_client.pagefactory.AndroidFindBy;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -38,42 +40,39 @@ public class HomePage {
     WebElement appMenu;
 
 
-    @FindBy(xpath = "//android.widget.TextView[@text='contect']")
+    @FindBy(xpath = "//android.widget.TextView[@text='Content']")
     WebElement contentMenu;
 
+    @FindBy(xpath = "//android.widget.TextView[@text='Graphics']")
+    public WebElement graphicsMenu;
+
+    @FindBy(xpath = "//android.widget.TextView[@text='Media']")
+    public WebElement mediaMenu;
+
+    @FindBy(xpath = "//android.widget.TextView[@text='NFC']")
+    public WebElement nfcMenu;
+
+    @FindBy(xpath = "//android.widget.TextView[@text='OS']")
+    public WebElement osMenu;
+
+    @FindBy(xpath = "//android.widget.TextView[@text='Preference']")
+    public WebElement preferenceMenu;
+
+    @FindBy(xpath = "//android.widget.TextView[@text='Text']")
+    public WebElement textMenu;
+
+    @FindBy(xpath = "//android.widget.TextView[@text='Views']")
+    public WebElement viewsMenu;
 
 
-
-
-
-
-//        driver.findElement(By.xpath("//android.widget.TextView[@text='Content']")).click();
-//        driver.pressKey(new KeyEvent().withKey(AndroidKey.BACK));
-//        driver.findElement(By.xpath("//android.widget.TextView[@text='Graphics']")).click();
-//        driver.pressKey(new KeyEvent().withKey(AndroidKey.BACK));
-//        driver.findElement(By.xpath("//android.widget.TextView[@text='Media']")).click();
-//        driver.pressKey(new KeyEvent().withKey(AndroidKey.BACK));
-//        driver.findElement(By.xpath("//android.widget.TextView[@text='NFC']")).click();
-//        driver.pressKey(new KeyEvent().withKey(AndroidKey.BACK));
-//        driver.findElement(By.xpath("//android.widget.TextView[@text='OS']")).click();
-//        driver.pressKey(new KeyEvent().withKey(AndroidKey.BACK));
-//        driver.findElement(By.xpath("//android.widget.TextView[@text='Preference']")).click();
-//        driver.pressKey(new KeyEvent().withKey(AndroidKey.BACK));
-//        driver.findElement(By.xpath("//android.widget.TextView[@text='Text']")).click();
-//        driver.pressKey(new KeyEvent().withKey(AndroidKey.BACK));
-//        driver.findElement(By.xpath("//android.widget.TextView[@text='Views']")).click();
-//        driver.pressKey(new KeyEvent().withKey(AndroidKey.BACK));
-
-
-    public void androidGoBack() {
-        driver.pressKey(new KeyEvent().withKey(AndroidKey.BACK));
-    }
+    /**
+     * We wil create our functions here.
+     */
 
     public void verifyingAccessibilityMenu(){
         testUtils.elementIsDisplayed(accessibilityMenu, 60);
         testUtils.verifyText(accessibilityMenu, "Accessibility");
         testUtils.clickingOnElement(accessibilityMenu);
         testUtils.pressBack();
-
     }
 }
