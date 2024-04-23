@@ -1,11 +1,10 @@
 package android.PageObject;
 
 import Utility.TestUtils;
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.nativekey.AndroidKey;
-import io.appium.java_client.android.nativekey.KeyEvent;
 import io.appium.java_client.pagefactory.AndroidFindBy;
-import io.qameta.allure.Step;
+import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -15,7 +14,7 @@ public class HomePage {
     int pause_long = 2;
     int pause_extended = 3;
 
-    private AndroidDriver driver;
+    private AppiumDriver driver;
 
     TestUtils testUtils;
 
@@ -29,6 +28,13 @@ public class HomePage {
     /**
      * Our Elements Will Be Stored Here.
      */
+
+
+    @AndroidFindBy(xpath = "")
+    @iOSXCUITFindBy(xpath = "")
+    private WebElement QATesting;
+
+
 
     @FindBy(xpath = "//android.widget.TextView[@text='Accessibility']")
     WebElement accessibilityMenu;
