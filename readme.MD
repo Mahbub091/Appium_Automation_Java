@@ -1,0 +1,1 @@
+SwagLabsDemoAPP Bundle ID: org.reactjs.native.example.SwagLabsMobileApp

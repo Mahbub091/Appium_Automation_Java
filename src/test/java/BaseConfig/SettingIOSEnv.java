@@ -1,13 +1,12 @@
 package BaseConfig;
 
 import io.appium.java_client.ios.IOSDriver;
-import io.appium.java_client.remote.AutomationName;
+import io.appium.java_client.ios.options.XCUITestOptions;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 import io.appium.java_client.service.local.flags.GeneralServerFlag;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 
 import java.io.File;
 import java.net.MalformedURLException;
@@ -18,36 +17,32 @@ public class SettingIOSEnv {
     public IOSDriver driver;
     public AppiumDriverLocalService service;
 
-    @BeforeTest
+    @BeforeClass
     public IOSDriver setup() throws MalformedURLException {
         service = new AppiumServiceBuilder()
                 .withArgument(GeneralServerFlag.LOCAL_TIMEZONE)
-                .withLogFile(new File(System.getProperty("user.dir") + "/reports/Logs/AppiumLog.txt"))
+                .withLogFile(new File(System.getProperty("user.dir") + "/AppiumLog.txt"))
                 .withIPAddress("127.0.0.1")
                 .usingPort(4723)
-                .withTimeout(Duration.ofSeconds(300))
+                .withTimeout(Duration.ofSeconds(60))
                 .build();
 
         service.start();
 
         // Desired capabilities for iOS
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("platformName", "iOS");
-        capabilities.setCapability("platformVersion", "15.0");
-        capabilities.setCapability("deviceName", "iPhone 12");
-        capabilities.setCapability("automationName", AutomationName.IOS_XCUI_TEST);
-        capabilities.setCapability("app", System.getProperty("user.dir") + "/apps/ios.ipa");
+        XCUITestOptions options = new XCUITestOptions();
+        options.setDeviceName("iPhone 11 Pro Max")
+                .setPlatformName("17.4")
+                .setBundleId("org.reactjs.native.example.SwagLabsMobileApp")
+                .setNoReset(false);
 
-        driver = new IOSDriver(new URL("http://127.0.0.1:4723"), capabilities);
-
+        driver = new IOSDriver(new URL("http://127.0.0.1:4723/"), options);
         System.out.println("Starting iOS App through Appium Server");
 
         return driver;
     }
-
-    @AfterTest
+    @AfterClass
     public void closeApp() {
-        driver.quit();
         service.stop();
     }
 }
