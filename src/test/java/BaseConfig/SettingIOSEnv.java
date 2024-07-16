@@ -33,7 +33,7 @@ public class SettingIOSEnv {
         XCUITestOptions options = new XCUITestOptions();
         options.setDeviceName("iPhone 11 Pro Max")
                 .setPlatformName("17.4")
-                .setBundleId("org.reactjs.native.example.SwagLabsMobileApp")
+                .setBundleId("org.reactjs.native.example.wdioDemoApp")
                 .setNoReset(false);
 
         driver = new IOSDriver(new URL("http://127.0.0.1:4723/"), options);
