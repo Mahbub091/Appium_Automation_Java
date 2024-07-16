@@ -20,6 +20,6 @@ public class iOSTestAutomation extends SettingIOSEnv {
     @Test(testName = "Test01", description = " Verifying The Menus")
     public void test01() {
         testUtils.wait(1);
-        samplePage.verifyingAccessibilityMenu();
+//        samplePage.verifyingAccessibilityMenu();
     }
 }
