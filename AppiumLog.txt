@@ -1,14 +1,122 @@
-2024-07-14 23:51:35:531 [Appium] Welcome to Appium v2.5.4 (REV e5f776b3e23cae8f1b6c3d1194b8329bf701965f)
-2024-07-14 23:51:35:532 [Appium] Non-default server args:
-2024-07-14 23:51:35:533 [Appium] { address: '127.0.0.1', localTimezone: true }
-2024-07-14 23:51:35:534 [Appium] The autodetected Appium home path: /Users/mahbuburrahman/.appium
-2024-07-14 23:51:35:535 [Appium] Attempting to load driver xcuitest...
-2024-07-14 23:51:35:536 [Appium] Attempting to load driver uiautomator2...
-2024-07-14 23:51:35:538 [Appium] Requiring driver at /Users/mahbuburrahman/.appium/node_modules/appium-xcuitest-driver/build/index.js
-2024-07-14 23:51:35:540 [Appium] Requiring driver at /Users/mahbuburrahman/.appium/node_modules/appium-uiautomator2-driver/build/index.js
-2024-07-14 23:51:37:069 [Appium] XCUITestDriver has been successfully loaded in 1.527s
-2024-07-14 23:51:37:070 [Appium] AndroidUiautomator2Driver has been successfully loaded in 1.534s
-2024-07-14 23:51:37:072 uncaughtException: write EPIPE
+2024-07-16 18:07:07:484 [Appium] Welcome to Appium v2.5.4 (REV e5f776b3e23cae8f1b6c3d1194b8329bf701965f)
+2024-07-16 18:07:07:485 [Appium] Non-default server args:
+2024-07-16 18:07:07:486 [Appium] { address: '127.0.0.1', localTimezone: true }
+2024-07-16 18:07:07:487 [Appium] The autodetected Appium home path: /Users/mahbuburrahman/.appium
+2024-07-16 18:07:07:487 [Appium] Attempting to load driver xcuitest...
+2024-07-16 18:07:07:488 [Appium] Attempting to load driver uiautomator2...
+2024-07-16 18:07:07:489 [Appium] Requiring driver at /Users/mahbuburrahman/.appium/node_modules/appium-xcuitest-driver/build/index.js
+2024-07-16 18:07:07:491 [Appium] Requiring driver at /Users/mahbuburrahman/.appium/node_modules/appium-uiautomator2-driver/build/index.js
+2024-07-16 18:07:08:622 [Appium] XCUITestDriver has been successfully loaded in 1.134s
+2024-07-16 18:07:08:622 [Appium] AndroidUiautomator2Driver has been successfully loaded in 1.134s
+2024-07-16 18:07:08:636 [Appium] Appium REST http interface listener started on http://127.0.0.1:4723
+2024-07-16 18:07:08:636 [Appium] Available drivers:
+2024-07-16 18:07:08:636 [Appium]   - xcuitest@7.16.2 (automationName 'XCUITest')
+2024-07-16 18:07:08:636 [Appium]   - uiautomator2@3.5.2 (automationName 'UiAutomator2')
+2024-07-16 18:07:08:636 [Appium] No plugins have been installed. Use the "appium plugin" command to install the one(s) you want to use.
+2024-07-16 18:07:08:697 [HTTP] --> GET /status
+2024-07-16 18:07:08:698 [HTTP] {}
+2024-07-16 18:07:08:698 [AppiumDriver@4e2d] Calling AppiumDriver.getStatus() with args: []
+2024-07-16 18:07:08:699 [AppiumDriver@4e2d] Responding to client with driver.getStatus() result: {"ready":true,"message":"The server is ready to accept new connections","build":{"version":"2.5.4","git-sha":"e5f776b3e23cae8f1b6c3d1194b8329bf701965f","built":"2024-06-30 23:28:17 -0700"}}
+2024-07-16 18:07:08:703 [HTTP] <-- GET /status 200 4 ms - 199
+2024-07-16 18:07:08:703 [HTTP] 
+2024-07-16 18:07:09:122 [HTTP] Request idempotency key: ac761b76-fe7c-462c-a4dc-79cb16d1305a
+2024-07-16 18:07:09:129 [HTTP] --> POST /session
+2024-07-16 18:07:09:129 [HTTP] {"capabilities":{"firstMatch":[{}],"alwaysMatch":{"appium:automationName":"XCuiTest","appium:bundleId":"org.reactjs.native.example.wdioDemoApp","appium:deviceName":"iPhone 11 Pro Max","appium:noReset":false,"platformName":"IOS"}}}
+2024-07-16 18:07:09:129 [AppiumDriver@4e2d] Calling AppiumDriver.createSession() with args: [null,null,{"firstMatch":[{}],"alwaysMatch":{"appium:automationName":"XCuiTest","appium:bundleId":"org.reactjs.native.example.wdioDemoApp","appium:deviceName":"iPhone 11 Pro Max","appium:noReset":false,"platformName":"IOS"}}]
+2024-07-16 18:07:09:129 [AppiumDriver@4e2d] Event 'newSessionRequested' logged at 1721131629129 (18:07:09 GMT+0600 (Bangladesh Standard Time))
+2024-07-16 18:07:09:131 [Appium] Attempting to find matching driver for automationName 'XCuiTest' and platformName 'IOS'
+2024-07-16 18:07:09:131 [Appium] The 'xcuitest' driver was installed and matched caps.
+2024-07-16 18:07:09:131 [Appium] Will require it at /Users/mahbuburrahman/.appium/node_modules/appium-xcuitest-driver
+2024-07-16 18:07:09:133 [Appium] Requiring driver at /Users/mahbuburrahman/.appium/node_modules/appium-xcuitest-driver/build/index.js
+2024-07-16 18:07:09:133 [AppiumDriver@4e2d] Appium v2.5.4 creating new XCUITestDriver (v7.16.2) session
+2024-07-16 18:07:09:133 [AppiumDriver@4e2d] Checking BaseDriver versions for Appium and XCUITestDriver
+2024-07-16 18:07:09:133 [AppiumDriver@4e2d] Appium's BaseDriver version is 9.7.0
+2024-07-16 18:07:09:133 [AppiumDriver@4e2d] XCUITestDriver's BaseDriver version is 9.7.0
+2024-07-16 18:07:09:138 [XCUITestDriver@98ef] Creating session with W3C capabilities: {
+2024-07-16 18:07:09:138 [XCUITestDriver@98ef]   "alwaysMatch": {
+2024-07-16 18:07:09:138 [XCUITestDriver@98ef]     "platformName": "IOS",
+2024-07-16 18:07:09:138 [XCUITestDriver@98ef]     "appium:automationName": "XCuiTest",
+2024-07-16 18:07:09:138 [XCUITestDriver@98ef]     "appium:bundleId": "org.reactjs.native.example.wdioDemoApp",
+2024-07-16 18:07:09:138 [XCUITestDriver@98ef]     "appium:deviceName": "iPhone 11 Pro Max",
+2024-07-16 18:07:09:138 [XCUITestDriver@98ef]     "appium:noReset": false
+2024-07-16 18:07:09:138 [XCUITestDriver@98ef]   },
+2024-07-16 18:07:09:139 [XCUITestDriver@98ef]   "firstMatch": [
+2024-07-16 18:07:09:139 [XCUITestDriver@98ef]     {}
+2024-07-16 18:07:09:139 [XCUITestDriver@98ef]   ]
+2024-07-16 18:07:09:139 [XCUITestDriver@98ef] }
+2024-07-16 18:07:09:144 [XCUITestDriver@98ef] 'platformVersion' capability ('undefined') is not a valid version number. Consider fixing it or be ready to experience an inconsistent driver behavior.
+2024-07-16 18:07:09:145 [XCUITestDriver@98ef (db0c37e5)] Session created with session id: db0c37e5-fad3-4932-93ca-a72d2def6baf
+2024-07-16 18:07:09:154 [XCUITest] Current user: 'mahbuburrahman'
+2024-07-16 18:07:09:154 [XCUITestDriver@98ef (db0c37e5)] No real device udid has been provided in capabilities. Will select a matching simulator to run the test.
+2024-07-16 18:07:09:161 [XCUITestDriver@98ef (db0c37e5)] iOS SDK Version set to '17.4'
+2024-07-16 18:07:09:161 [XCUITestDriver@98ef (db0c37e5)] No platformVersion specified. Using the latest version Xcode supports: '17.4'. This may cause problems if a simulator does not exist for this platform version.
+2024-07-16 18:07:09:540 [XCUITestDriver@98ef (db0c37e5)] Looking for an existing Simulator with platformName: iOS, platformVersion: 17.4, deviceName: iPhone 11 Pro Max
+2024-07-16 18:07:09:554 [XCUITestDriver@98ef (db0c37e5)] Constructing iOS simulator for Xcode version 15.3 with udid 'CAA9D38E-07FE-4C66-A1A4-165686EE772B'
+2024-07-16 18:07:09:555 [XCUITestDriver@98ef (db0c37e5)] Determining device to run tests on: udid: 'CAA9D38E-07FE-4C66-A1A4-165686EE772B', real device: false
+2024-07-16 18:07:09:555 [XCUITestDriver@98ef (db0c37e5)] Event 'xcodeDetailsRetrieved' logged at 1721131629555 (18:07:09 GMT+0600 (Bangladesh Standard Time))
+2024-07-16 18:07:09:555 [XCUITestDriver@98ef (db0c37e5)] Event 'appConfigured' logged at 1721131629555 (18:07:09 GMT+0600 (Bangladesh Standard Time))
+2024-07-16 18:07:09:555 [XCUITestDriver@98ef (db0c37e5)] Event 'resetStarted' logged at 1721131629555 (18:07:09 GMT+0600 (Bangladesh Standard Time))
+2024-07-16 18:07:09:934 [XCUITestDriver@98ef (db0c37e5)] Found 1 org.reactjs.native.example.wdioDemoApp app file to scrub
+2024-07-16 18:07:10:040 [simctl] Error running 'terminate': An error was encountered processing the command (domain=NSPOSIXErrorDomain, code=3):
+Simulator device failed to terminate org.reactjs.native.example.wdioDemoApp.
+found nothing to terminate
+Underlying error (domain=NSPOSIXErrorDomain, code=3):
+	The request to terminate "org.reactjs.native.example.wdioDemoApp" failed. found nothing to terminate
+	found nothing to terminate
+2024-07-16 18:07:10:041 [XCUITestDriver@98ef (db0c37e5)] Event 'resetComplete' logged at 1721131630041 (18:07:10 GMT+0600 (Bangladesh Standard Time))
+2024-07-16 18:07:10:041 [XCUITestDriver@98ef (db0c37e5)] Using WDA path: '/Users/mahbuburrahman/.appium/node_modules/appium-xcuitest-driver/node_modules/appium-webdriveragent'
+2024-07-16 18:07:10:041 [XCUITestDriver@98ef (db0c37e5)] Using WDA agent: '/Users/mahbuburrahman/.appium/node_modules/appium-xcuitest-driver/node_modules/appium-webdriveragent/WebDriverAgent.xcodeproj'
+2024-07-16 18:07:10:126 [IOSSimulatorLog] Starting log capture for iOS Simulator with udid 'CAA9D38E-07FE-4C66-A1A4-165686EE772B' using simctl
+2024-07-16 18:07:10:484 [XCUITestDriver@98ef (db0c37e5)] Event 'logCaptureStarted' logged at 1721131630484 (18:07:10 GMT+0600 (Bangladesh Standard Time))
+2024-07-16 18:07:10:484 [XCUITestDriver@98ef (db0c37e5)] Setting up simulator
+2024-07-16 18:07:10:485 [XCUITestDriver@98ef (db0c37e5)] Setting preferences of CAA9D38E-07FE-4C66-A1A4-165686EE772B Simulator to {"ConnectHardwareKeyboard":false}
+2024-07-16 18:07:10:485 [XCUITestDriver@98ef (db0c37e5)] Setting common Simulator preferences to {"RotateWindowWhenSignaledByGuest":true,"StartLastDeviceOnLaunch":false,"DetachOnWindowClose":false,"AttachBootedOnStart":true,"ConnectHardwareKeyboard":false,"PasteboardAutomaticSync":false}
+2024-07-16 18:07:10:515 [XCUITestDriver@98ef (db0c37e5)] Updated CAA9D38E-07FE-4C66-A1A4-165686EE772B Simulator preferences at '/Users/mahbuburrahman/Library/Preferences/com.apple.iphonesimulator.plist' with {"RotateWindowWhenSignaledByGuest":true,"StartLastDeviceOnLaunch":false,"DetachOnWindowClose":false,"AttachBootedOnStart":true,"ConnectHardwareKeyboard":false,"PasteboardAutomaticSync":false,"DevicePreferences":{"CAA9D38E-07FE-4C66-A1A4-165686EE772B":{"SimulatorExternalDisplay":2114,"ConnectHardwareKeyboard":false,"ChromeTint":"","SimulatorWindowGeometry":{"7D96B053-BF04-4F30-B622-4D6D9CC4ED99":{"WindowCenter":"{747, 466}","WindowScale":0.7578616352201258}},"SimulatorWindowOrientation":"Portrait","SimulatorWindowRotationAngle":0}}}
+2024-07-16 18:07:10:634 [XCUITestDriver@98ef (db0c37e5)] Got Simulator UI client PID: 94046
+2024-07-16 18:07:10:635 [XCUITestDriver@98ef (db0c37e5)] Both Simulator with UDID 'CAA9D38E-07FE-4C66-A1A4-165686EE772B' and the UI client are currently running
+2024-07-16 18:07:10:636 [XCUITestDriver@98ef (db0c37e5)] Event 'simStarted' logged at 1721131630636 (18:07:10 GMT+0600 (Bangladesh Standard Time))
+2024-07-16 18:07:10:779 [XCUITestDriver@98ef (db0c37e5)] No obsolete cached processes from previous WDA sessions listening on port 8100 have been found
+2024-07-16 18:07:10:780 [DevCon Factory] Requesting connection for device CAA9D38E-07FE-4C66-A1A4-165686EE772B on local port 8100
+2024-07-16 18:07:10:780 [DevCon Factory] Cached connections count: 0
+2024-07-16 18:07:10:780 [DevCon Factory] Successfully requested the connection for CAA9D38E-07FE-4C66-A1A4-165686EE772B:8100
+2024-07-16 18:07:10:780 [XCUITestDriver@98ef (db0c37e5)] Starting WebDriverAgent initialization with the synchronization key 'XCUITestDriver'
+2024-07-16 18:07:10:782 [WD Proxy] Matched '/status' to command name 'getStatus'
+2024-07-16 18:07:10:782 [WD Proxy] Proxying [GET /status] to [GET http://127.0.0.1:8100/status] with no body
+2024-07-16 18:07:10:814 [WD Proxy] Got response with status 200: {"value":{"build":{"upgradedAt":"1716904292434","version":"8.6.0","time":"Jun 27 2024 13:59:40","productBundleIdentifier":"com.facebook.WebDriverAgentRunner"},"os":{"testmanagerdVersion":65535,"name":"iOS","sdkVersion":"17.4","version":"17.4"},"device":"iphone","ios":{"simulatorVersion":"17.4","ip":"192.168.31.97"},"message":"WebDriverAgent is ready to accept commands","state":"success","ready":true},"sessionId":"407164C2-580D-418B-8A95-031C4DB237C9"}
+2024-07-16 18:07:10:815 [XCUITestDriver@98ef (db0c37e5)] Upgrade timestamp of the currently bundled WDA: 1716904292434
+2024-07-16 18:07:10:815 [XCUITestDriver@98ef (db0c37e5)] Upgrade timestamp of the WDA on the device: 1716904292434
+2024-07-16 18:07:10:815 [XCUITestDriver@98ef (db0c37e5)] Will reuse previously cached WDA instance at 'http://127.0.0.1:8100/' with 'com.facebook.WebDriverAgentRunner'. Set the wdaLocalPort capability to a value different from 8100 if this is an undesired behavior.
+2024-07-16 18:07:10:815 [XCUITestDriver@98ef (db0c37e5)] Trying to start WebDriverAgent 2 times with 10000ms interval
+2024-07-16 18:07:10:815 [XCUITestDriver@98ef (db0c37e5)] These values can be customized by changing wdaStartupRetries/wdaStartupRetryInterval capabilities
+2024-07-16 18:07:10:815 [XCUITestDriver@98ef (db0c37e5)] Event 'wdaStartAttempted' logged at 1721131630815 (18:07:10 GMT+0600 (Bangladesh Standard Time))
+2024-07-16 18:07:10:815 [XCUITestDriver@98ef (db0c37e5)] Using provided WebdriverAgent at 'http://127.0.0.1:8100/'
+2024-07-16 18:07:10:815 [WD Proxy] Matched '/status' to command name 'getStatus'
+2024-07-16 18:07:10:815 [WD Proxy] Proxying [GET /status] to [GET http://127.0.0.1:8100/status] with no body
+2024-07-16 18:07:10:818 [WD Proxy] Got response with status 200: {"value":{"build":{"upgradedAt":"1716904292434","version":"8.6.0","time":"Jun 27 2024 13:59:40","productBundleIdentifier":"com.facebook.WebDriverAgentRunner"},"os":{"testmanagerdVersion":65535,"name":"iOS","sdkVersion":"17.4","version":"17.4"},"device":"iphone","ios":{"simulatorVersion":"17.4","ip":"192.168.31.97"},"message":"WebDriverAgent is ready to accept commands","state":"success","ready":true},"sessionId":"407164C2-580D-418B-8A95-031C4DB237C9"}
+2024-07-16 18:07:10:818 [XCUITestDriver@98ef (db0c37e5)] Event 'wdaSessionAttempted' logged at 1721131630818 (18:07:10 GMT+0600 (Bangladesh Standard Time))
+2024-07-16 18:07:10:818 [XCUITestDriver@98ef (db0c37e5)] Sending createSession command to WDA
+2024-07-16 18:07:10:819 [XCUITestDriver@98ef (db0c37e5)] Matched '/session' to command name 'createSession'
+2024-07-16 18:07:10:819 [XCUITestDriver@98ef (db0c37e5)] Proxying [POST /session] to [POST http://127.0.0.1:8100/session] with body: {"capabilities":{"firstMatch":[{"bundleId":"org.reactjs.native.example.wdioDemoApp","arguments":[],"environment":{},"eventloopIdleDelaySec":0,"shouldWaitForQuiescence":true,"shouldUseTestManagerForVisibilityDetection":false,"maxTypingFrequency":60,"shouldUseSingletonTestManager":true,"shouldTerminateApp":true,"forceAppLaunch":true,"useNativeCachingStrategy":true,"forceSimulatorSoftwareKeyboardPresence":true}],"alwaysMatch":{}}}
+2024-07-16 18:07:13:241 [XCUITestDriver@98ef (db0c37e5)] Parsed BUILD_DIR configuration value: '/Users/mahbuburrahman/Library/Developer/Xcode/DerivedData/WebDriverAgent-dpwcgeiqnwybpbcmtvgjcfmqcqsc/Build/Products'
+2024-07-16 18:07:13:243 [XCUITestDriver@98ef (db0c37e5)] Got derived data root: '/Users/mahbuburrahman/Library/Developer/Xcode/DerivedData/WebDriverAgent-dpwcgeiqnwybpbcmtvgjcfmqcqsc'
+2024-07-16 18:07:18:821 [XCUITestDriver@98ef (db0c37e5)] Got response with status 200: {"value":{"sessionId":"C65716F9-D7FC-40DF-BEBC-990FE9C44325","capabilities":{"sdkVersion":"17.4","device":"iphone"}},"sessionId":"C65716F9-D7FC-40DF-BEBC-990FE9C44325"}
+2024-07-16 18:07:18:825 [XCUITestDriver@98ef (db0c37e5)] Determined the downstream protocol as 'W3C'
+2024-07-16 18:07:18:825 [XCUITestDriver@98ef (db0c37e5)] WDA session startup took 8007ms
+2024-07-16 18:07:18:826 [XCUITestDriver@98ef (db0c37e5)] Event 'wdaSessionStarted' logged at 1721131638825 (18:07:18 GMT+0600 (Bangladesh Standard Time))
+2024-07-16 18:07:18:826 [XCUITestDriver@98ef (db0c37e5)] Event 'wdaStarted' logged at 1721131638826 (18:07:18 GMT+0600 (Bangladesh Standard Time))
+2024-07-16 18:07:18:827 [BaseDriver] The value of 'elementResponseAttributes' setting did not change. Skipping the update for it
+2024-07-16 18:07:18:827 [BaseDriver] The value of 'shouldUseCompactResponses' setting did not change. Skipping the update for it
+2024-07-16 18:07:18:828 [AppiumDriver@4e2d] New XCUITestDriver session created successfully, session db0c37e5-fad3-4932-93ca-a72d2def6baf added to master session list
+2024-07-16 18:07:18:829 [AppiumDriver@4e2d] Event 'newSessionStarted' logged at 1721131638829 (18:07:18 GMT+0600 (Bangladesh Standard Time))
+2024-07-16 18:07:18:829 [XCUITestDriver@98ef (db0c37e5)] Cached the protocol value 'W3C' for the new session db0c37e5-fad3-4932-93ca-a72d2def6baf
+2024-07-16 18:07:18:830 [XCUITestDriver@98ef (db0c37e5)] Responding to client with driver.createSession() result: {"capabilities":{"webStorageEnabled":false,"locationContextEnabled":false,"browserName":"","platform":"MAC","javascriptEnabled":true,"databaseEnabled":false,"takesScreenshot":true,"networkConnectionEnabled":false,"platformName":"IOS","automationName":"XCuiTest","bundleId":"org.reactjs.native.example.wdioDemoApp","deviceName":"iPhone 11 Pro Max","noReset":false,"platformVersion":"17.4","udid":"CAA9D38E-07FE-4C66-A1A4-165686EE772B"}}
+2024-07-16 18:07:18:836 [HTTP] <-- POST /session 200 9705 ms - 496
+2024-07-16 18:07:18:836 [HTTP] 
+2024-07-16 18:07:20:094 [Appium] Received SIGTERM - shutting down
+2024-07-16 18:07:20:098 [AppiumDriver@4e2d] Cleaning up 1 active session
+2024-07-16 18:07:20:099 [AppiumDriver@4e2d] Ending session, cause was 'The process has received SIGTERM signal'
+2024-07-16 18:07:20:099 [AppiumDriver@4e2d] Removing session 'db0c37e5-fad3-4932-93ca-a72d2def6baf' from our master session list
+2024-07-16 18:07:20:107 uncaughtException: write EPIPE
 Error: write EPIPE
     at afterWriteDispatched (node:internal/stream_base_commons:160:15)
     at writeGeneric (node:internal/stream_base_commons:151:3)
@@ -34,14 +142,16 @@ Error: write EPIPE
     at doWrite (/opt/homebrew/lib/node_modules/appium/node_modules/winston/node_modules/readable-stream/lib/_stream_writable.js:390:139)
     at writeOrBuffer (/opt/homebrew/lib/node_modules/appium/node_modules/winston/node_modules/readable-stream/lib/_stream_writable.js:381:5)
     at DerivedLogger.Writable.write (/opt/homebrew/lib/node_modules/appium/node_modules/winston/node_modules/readable-stream/lib/_stream_writable.js:302:11)
-    at DerivedLogger.<computed> [as debug] (/opt/homebrew/lib/node_modules/appium/node_modules/winston/lib/winston/create-logger.js:81:14)
+    at DerivedLogger.<computed> [as info] (/opt/homebrew/lib/node_modules/appium/node_modules/winston/lib/winston/create-logger.js:81:14)
     at EventEmitter.<anonymous> (/opt/homebrew/lib/node_modules/appium/lib/logsink.js:220:22)
     at EventEmitter.emit (node:events:519:28)
     at EventEmitter.<anonymous> (/opt/homebrew/lib/node_modules/appium/node_modules/npmlog/lib/log.js:247:8)
     at EventEmitter.<anonymous> (/opt/homebrew/lib/node_modules/appium/node_modules/npmlog/lib/log.js:377:23)
-    at Object.wrappedLogger.<computed> [as debug] (/opt/homebrew/lib/node_modules/appium/node_modules/@appium/support/lib/logging.js:106:24)
-    at /opt/homebrew/lib/node_modules/appium/lib/extension/index.js:54:13
-2024-07-14 23:51:37:075 uncaughtException: write EPIPE
+    at Object.wrappedLogger.<computed> [as info] (/opt/homebrew/lib/node_modules/appium/node_modules/@appium/support/lib/logging.js:106:24)
+    at process.onSignal (/opt/homebrew/lib/node_modules/appium/lib/main.js:419:14)
+    at Object.onceWrapper (node:events:634:26)
+    at process.emit (node:events:531:35)
+2024-07-16 18:07:20:107 uncaughtException: write EPIPE
 Error: write EPIPE
     at afterWriteDispatched (node:internal/stream_base_commons:160:15)
     at writeGeneric (node:internal/stream_base_commons:151:3)
@@ -77,7 +187,7 @@ Error: write EPIPE
     at processEmit (/Users/mahbuburrahman/node_modules/lockfile/node_modules/signal-exit/index.js:199:34)
     at process.emit (/Users/mahbuburrahman/node_modules/source-map-support/source-map-support.js:516:21)
     at process.emit (/Users/mahbuburrahman/.appium/node_modules/appium-uiautomator2-driver/node_modules/source-map-support/source-map-support.js:516:21)
-2024-07-14 23:51:37:076 uncaughtException: write EPIPE
+2024-07-16 18:07:20:108 uncaughtException: write EPIPE
 Error: write EPIPE
     at afterWriteDispatched (node:internal/stream_base_commons:160:15)
     at writeGeneric (node:internal/stream_base_commons:151:3)
@@ -113,7 +223,7 @@ Error: write EPIPE
     at processEmit (/Users/mahbuburrahman/node_modules/lockfile/node_modules/signal-exit/index.js:199:34)
     at process.emit (/Users/mahbuburrahman/node_modules/source-map-support/source-map-support.js:516:21)
     at process.emit (/Users/mahbuburrahman/.appium/node_modules/appium-uiautomator2-driver/node_modules/source-map-support/source-map-support.js:516:21)
-2024-07-14 23:51:37:076 uncaughtException: write EPIPE
+2024-07-16 18:07:20:108 uncaughtException: write EPIPE
 Error: write EPIPE
     at afterWriteDispatched (node:internal/stream_base_commons:160:15)
     at writeGeneric (node:internal/stream_base_commons:151:3)
@@ -149,7 +259,79 @@ Error: write EPIPE
     at processEmit (/Users/mahbuburrahman/node_modules/lockfile/node_modules/signal-exit/index.js:199:34)
     at process.emit (/Users/mahbuburrahman/node_modules/source-map-support/source-map-support.js:516:21)
     at process.emit (/Users/mahbuburrahman/.appium/node_modules/appium-uiautomator2-driver/node_modules/source-map-support/source-map-support.js:516:21)
-2024-07-14 23:51:37:077 uncaughtException: write EPIPE
+2024-07-16 18:07:20:109 uncaughtException: write EPIPE
+Error: write EPIPE
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at Socket._writeGeneric (node:net:952:11)
+    at Socket._write (node:net:964:8)
+    at writeOrBuffer (node:internal/streams/writable:564:12)
+    at _write (node:internal/streams/writable:493:10)
+    at Socket.Writable.write (node:internal/streams/writable:502:10)
+    at Console.log (/opt/homebrew/lib/node_modules/appium/node_modules/winston/lib/winston/transports/console.js:51:25)
+    at Console._write (/opt/homebrew/lib/node_modules/appium/node_modules/winston-transport/modern.js:103:17)
+    at doWrite (/opt/homebrew/lib/node_modules/appium/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:390:139)
+    at writeOrBuffer (/opt/homebrew/lib/node_modules/appium/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:381:5)
+    at Console.Writable.write (/opt/homebrew/lib/node_modules/appium/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:302:11)
+    at DerivedLogger.ondata (/opt/homebrew/lib/node_modules/appium/node_modules/winston/node_modules/readable-stream/lib/_stream_readable.js:629:20)
+    at DerivedLogger.emit (node:events:531:35)
+    at addChunk (/opt/homebrew/lib/node_modules/appium/node_modules/winston/node_modules/readable-stream/lib/_stream_readable.js:279:12)
+    at readableAddChunk (/opt/homebrew/lib/node_modules/appium/node_modules/winston/node_modules/readable-stream/lib/_stream_readable.js:262:11)
+    at DerivedLogger.Readable.push (/opt/homebrew/lib/node_modules/appium/node_modules/winston/node_modules/readable-stream/lib/_stream_readable.js:228:10)
+    at DerivedLogger.Transform.push (/opt/homebrew/lib/node_modules/appium/node_modules/winston/node_modules/readable-stream/lib/_stream_transform.js:132:32)
+    at DerivedLogger._transform (/opt/homebrew/lib/node_modules/appium/node_modules/winston/lib/winston/logger.js:313:12)
+    at DerivedLogger.Transform._read (/opt/homebrew/lib/node_modules/appium/node_modules/winston/node_modules/readable-stream/lib/_stream_transform.js:166:10)
+    at DerivedLogger.Transform._write (/opt/homebrew/lib/node_modules/appium/node_modules/winston/node_modules/readable-stream/lib/_stream_transform.js:155:83)
+    at doWrite (/opt/homebrew/lib/node_modules/appium/node_modules/winston/node_modules/readable-stream/lib/_stream_writable.js:390:139)
+    at writeOrBuffer (/opt/homebrew/lib/node_modules/appium/node_modules/winston/node_modules/readable-stream/lib/_stream_writable.js:381:5)
+    at DerivedLogger.Writable.write (/opt/homebrew/lib/node_modules/appium/node_modules/winston/node_modules/readable-stream/lib/_stream_writable.js:302:11)
+    at DerivedLogger.log (/opt/homebrew/lib/node_modules/appium/node_modules/winston/lib/winston/logger.js:216:12)
+    at ExceptionHandler._uncaughtException (/opt/homebrew/lib/node_modules/appium/node_modules/winston/lib/winston/exception-handler.js:220:17)
+    at process.emit (node:events:519:28)
+    at processEmit (/opt/homebrew/lib/node_modules/appium/node_modules/lockfile/node_modules/signal-exit/index.js:199:34)
+    at process.emit (/opt/homebrew/lib/node_modules/appium/node_modules/source-map-support/source-map-support.js:516:21)
+    at processEmit (/Users/mahbuburrahman/.appium/node_modules/appium-xcuitest-driver/node_modules/signal-exit/index.js:199:34)
+    at process.emit (/Users/mahbuburrahman/.appium/node_modules/appium-xcuitest-driver/node_modules/source-map-support/source-map-support.js:516:21)
+    at processEmit (/Users/mahbuburrahman/node_modules/lockfile/node_modules/signal-exit/index.js:199:34)
+    at process.emit (/Users/mahbuburrahman/node_modules/source-map-support/source-map-support.js:516:21)
+    at process.emit (/Users/mahbuburrahman/.appium/node_modules/appium-uiautomator2-driver/node_modules/source-map-support/source-map-support.js:516:21)
+2024-07-16 18:07:20:110 uncaughtException: write EPIPE
+Error: write EPIPE
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at Socket._writeGeneric (node:net:952:11)
+    at Socket._write (node:net:964:8)
+    at writeOrBuffer (node:internal/streams/writable:564:12)
+    at _write (node:internal/streams/writable:493:10)
+    at Socket.Writable.write (node:internal/streams/writable:502:10)
+    at Console.log (/opt/homebrew/lib/node_modules/appium/node_modules/winston/lib/winston/transports/console.js:51:25)
+    at Console._write (/opt/homebrew/lib/node_modules/appium/node_modules/winston-transport/modern.js:103:17)
+    at doWrite (/opt/homebrew/lib/node_modules/appium/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:390:139)
+    at writeOrBuffer (/opt/homebrew/lib/node_modules/appium/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:381:5)
+    at Console.Writable.write (/opt/homebrew/lib/node_modules/appium/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:302:11)
+    at DerivedLogger.ondata (/opt/homebrew/lib/node_modules/appium/node_modules/winston/node_modules/readable-stream/lib/_stream_readable.js:629:20)
+    at DerivedLogger.emit (node:events:531:35)
+    at addChunk (/opt/homebrew/lib/node_modules/appium/node_modules/winston/node_modules/readable-stream/lib/_stream_readable.js:279:12)
+    at readableAddChunk (/opt/homebrew/lib/node_modules/appium/node_modules/winston/node_modules/readable-stream/lib/_stream_readable.js:262:11)
+    at DerivedLogger.Readable.push (/opt/homebrew/lib/node_modules/appium/node_modules/winston/node_modules/readable-stream/lib/_stream_readable.js:228:10)
+    at DerivedLogger.Transform.push (/opt/homebrew/lib/node_modules/appium/node_modules/winston/node_modules/readable-stream/lib/_stream_transform.js:132:32)
+    at DerivedLogger._transform (/opt/homebrew/lib/node_modules/appium/node_modules/winston/lib/winston/logger.js:313:12)
+    at DerivedLogger.Transform._read (/opt/homebrew/lib/node_modules/appium/node_modules/winston/node_modules/readable-stream/lib/_stream_transform.js:166:10)
+    at DerivedLogger.Transform._write (/opt/homebrew/lib/node_modules/appium/node_modules/winston/node_modules/readable-stream/lib/_stream_transform.js:155:83)
+    at doWrite (/opt/homebrew/lib/node_modules/appium/node_modules/winston/node_modules/readable-stream/lib/_stream_writable.js:390:139)
+    at writeOrBuffer (/opt/homebrew/lib/node_modules/appium/node_modules/winston/node_modules/readable-stream/lib/_stream_writable.js:381:5)
+    at DerivedLogger.Writable.write (/opt/homebrew/lib/node_modules/appium/node_modules/winston/node_modules/readable-stream/lib/_stream_writable.js:302:11)
+    at DerivedLogger.log (/opt/homebrew/lib/node_modules/appium/node_modules/winston/lib/winston/logger.js:216:12)
+    at ExceptionHandler._uncaughtException (/opt/homebrew/lib/node_modules/appium/node_modules/winston/lib/winston/exception-handler.js:220:17)
+    at process.emit (node:events:519:28)
+    at processEmit (/opt/homebrew/lib/node_modules/appium/node_modules/lockfile/node_modules/signal-exit/index.js:199:34)
+    at process.emit (/opt/homebrew/lib/node_modules/appium/node_modules/source-map-support/source-map-support.js:516:21)
+    at processEmit (/Users/mahbuburrahman/.appium/node_modules/appium-xcuitest-driver/node_modules/signal-exit/index.js:199:34)
+    at process.emit (/Users/mahbuburrahman/.appium/node_modules/appium-xcuitest-driver/node_modules/source-map-support/source-map-support.js:516:21)
+    at processEmit (/Users/mahbuburrahman/node_modules/lockfile/node_modules/signal-exit/index.js:199:34)
+    at process.emit (/Users/mahbuburrahman/node_modules/source-map-support/source-map-support.js:516:21)
+    at process.emit (/Users/mahbuburrahman/.appium/node_modules/appium-uiautomator2-driver/node_modules/source-map-support/source-map-support.js:516:21)
+2024-07-16 18:07:20:110 uncaughtException: write EPIPE
 Error: write EPIPE
     at afterWriteDispatched (node:internal/stream_base_commons:160:15)
     at writeGeneric (node:internal/stream_base_commons:151:3)
