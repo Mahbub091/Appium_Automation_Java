@@ -21,6 +21,18 @@ public class AndroidTestAutomation  extends SettingAndroidEnv {
     @Test (testName = "Test01", description = " Verifying The Menus")
     public void test01() {
         test.wait(1);
-//        homePage.verifyingAccessibilityMenu();
+        homePage.verifyingNavigationToHomePage();
+        homePage.validatingWebViewMenu();
+        homePage.validatingLoginMenu();
+        homePage.validatingFormsMenu();
+        homePage.validatingSwipeMenu();
+        homePage.validatingDragMenu();
+        homePage.validatingHomeMenu();
+    }
+
+    @Test (testName = "Test02", description = "Validating Login Sections")
+    public void test02() {
+        homePage.validatingLoginMenu();
+        homePage.validatingLoginPageContent();
     }
 }

@@ -29,56 +29,115 @@ public class HomePage {
      * Our Elements Will Be Stored Here.
      */
 
+    @FindBy(xpath = "//android.widget.ScrollView[@content-desc=\"Home-screen\"]/android.view.ViewGroup/android.widget.ImageView[1]")
+    WebElement robotIcon;
 
-    @AndroidFindBy(xpath = "")
-    @iOSXCUITFindBy(xpath = "")
-    private WebElement QATesting;
+    @FindBy(xpath = "//android.widget.ScrollView[@content-desc=\"Home-screen\"]/android.view.ViewGroup/android.widget.TextView[2]")
+    WebElement demoText;
 
+    @FindBy(xpath = "//android.view.View[@content-desc=\"Home\"]/android.widget.TextView[1]")
+    WebElement homeMenu;
 
+    @FindBy(xpath = "//android.view.View[@content-desc=\"Webview\"]/android.widget.TextView[1]")
+    WebElement webView;
 
-    @FindBy(xpath = "//android.widget.TextView[@text='Accessibility']")
-    WebElement accessibilityMenu;
+    @FindBy(xpath = "//android.view.View[@content-desc=\"Login\"]/android.widget.TextView[1]")
+    WebElement login;
 
-    @FindBy(xpath = "//android.widget.TextView[@text='Animation']")
-    WebElement animationMenu;
+    @FindBy(xpath = "//android.view.View[@content-desc=\"Forms\"]/android.widget.TextView[1]")
+    WebElement forms;
 
-    @FindBy(xpath = "//android.widget.TextView[@text='App']")
-    WebElement appMenu;
+    @FindBy(xpath = "//android.view.View[@content-desc=\"Swipe\"]/android.widget.TextView[1]")
+    WebElement swipe;
 
+    @FindBy(xpath = "//android.view.View[@content-desc=\"Drag\"]/android.widget.TextView[1]")
+    WebElement drag;
 
-    @FindBy(xpath = "//android.widget.TextView[@text='Content']")
-    WebElement contentMenu;
+    @FindBy(xpath = "//android.widget.ScrollView[@content-desc=\"Login-screen\"]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.TextView")
+    WebElement loginMenuHeader;
 
-    @FindBy(xpath = "//android.widget.TextView[@text='Graphics']")
-    public WebElement graphicsMenu;
+    @FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"button-login-container\"]/android.view.ViewGroup/android.widget.TextView")
+    WebElement loginSectionButton;
 
-    @FindBy(xpath = "//android.widget.TextView[@text='Media']")
-    public WebElement mediaMenu;
+    @FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"button-sign-up-container\"]/android.view.ViewGroup/android.widget.TextView")
+    WebElement signUpSectionButton;
 
-    @FindBy(xpath = "//android.widget.TextView[@text='NFC']")
-    public WebElement nfcMenu;
+    @FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"button-LOGIN\"]/android.view.ViewGroup")
+    WebElement loginButton;
 
-    @FindBy(xpath = "//android.widget.TextView[@text='OS']")
-    public WebElement osMenu;
+    @FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"button-SIGN UP\"]/android.view.ViewGroup/android.widget.TextView")
+    WebElement signUpButton;
 
-    @FindBy(xpath = "//android.widget.TextView[@text='Preference']")
-    public WebElement preferenceMenu;
+    @FindBy(xpath = "//android.widget.EditText[@content-desc=\"input-email\"]")
+    WebElement loginEmailInputField;
 
-    @FindBy(xpath = "//android.widget.TextView[@text='Text']")
-    public WebElement textMenu;
-
-    @FindBy(xpath = "//android.widget.TextView[@text='Views']")
-    public WebElement viewsMenu;
+    @FindBy(xpath = "//android.widget.EditText[@content-desc=\"input-password\"]")
+    WebElement loginPasswordInputField;
 
 
     /**
      * We wil create our functions here.
      */
 
-    public void verifyingAccessibilityMenu(){
-        testUtils.elementIsDisplayed(accessibilityMenu, 60);
-        testUtils.verifyText(accessibilityMenu, "Accessibility");
-        testUtils.clickingOnElement(accessibilityMenu);
-        testUtils.pressBack();
+    public void verifyingNavigationToHomePage(){
+        testUtils.elementIsDisplayed(robotIcon, 60);
+        testUtils.verifyText(demoText, "Demo app for the appium-boilerplate");
+        testUtils.clickingOnElement(demoText);
+    }
+
+    public void validatingWebViewMenu() {
+        testUtils.elementIsDisplayed(webView, 60);
+        testUtils.verifyText(webView, "\uDB81\uDD9F");
+        testUtils.clickingOnElement(webView);
+    }
+
+    public void validatingLoginMenu() {
+        testUtils.elementIsDisplayed(login, 60);
+        testUtils.clickingOnElement(login);
+        testUtils.wait(1);
+    }
+
+    public void validatingFormsMenu() {
+        testUtils.elementIsDisplayed(forms, 60);
+        testUtils.verifyText(forms, "\uDB80\uDFEB");
+        testUtils.clickingOnElement(forms);
+    }
+
+    public void validatingSwipeMenu() {
+        testUtils.elementIsDisplayed(swipe, 60);
+        testUtils.verifyText(swipe, "\uDB82\uDD3C");
+        testUtils.clickingOnElement(swipe);
+    }
+
+    public void validatingDragMenu() {
+        testUtils.elementIsDisplayed(drag, 60);
+        testUtils.verifyText(drag, "\uDB80\uDDDB");
+        testUtils.clickingOnElement(drag);
+    }
+
+    public void validatingHomeMenu() {
+        testUtils.elementIsDisplayed(homeMenu, 60);
+        testUtils.verifyText(homeMenu, "Home");
+        testUtils.clickingOnElement(homeMenu);
+    }
+
+    public void validatingLoginPageContent () {
+        testUtils.elementIsDisplayed(loginMenuHeader,60);
+        testUtils.verifyText(loginMenuHeader, "Login / Sign up Form");
+        testUtils.verifyText(loginSectionButton, "Login");
+        testUtils.elementIsDisplayed(signUpSectionButton, 60);
+        testUtils.verifyText(signUpSectionButton, "Sign up");
+        testUtils.clickingOnElement(signUpSectionButton);
+        testUtils.clickingOnElement(loginSectionButton);
+
+        testUtils.enterText(loginEmailInputField, "mahbub");
+        testUtils.enterText(loginPasswordInputField, "1234");
+        testUtils.clickingOnElement(loginButton);
+
+
+
+
+
+        testUtils.wait(pause_Short);
     }
 }

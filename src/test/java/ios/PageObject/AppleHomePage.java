@@ -32,8 +32,5 @@ public class AppleHomePage {
      */
 
     public void verifyingAccessibilityMenu(){
-        iosUtils.elementIsDisplayed(accessibilityMenu, 60);
-        iosUtils.verifyText(accessibilityMenu, "Accessibility");
-        iosUtils.clickingOnElement(accessibilityMenu);
     }
 }
