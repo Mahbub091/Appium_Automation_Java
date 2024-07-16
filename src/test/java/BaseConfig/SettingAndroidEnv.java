@@ -34,8 +34,8 @@ public class SettingAndroidEnv {
         UiAutomator2Options options = new UiAutomator2Options ();
         options.setPlatformName("android");
         options.setAutomationName(AutomationName.ANDROID_UIAUTOMATOR2);
-        options.setDeviceName("Pixel 4");
-        options.setApp(System.getProperty("user.dir") + "/apps/swaglabs.apk");
+        options.setDeviceName("emulator-5544");
+        options.setApp(System.getProperty("user.dir") + "/apps/android.wdio.native.app.v1.0.8.apk");
 
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
 
