@@ -35,4 +35,9 @@ public class AndroidTestAutomation  extends SettingAndroidEnv {
         homePage.validatingLoginMenu();
         homePage.validatingLoginPageContent();
     }
+
+    @Test (testName = "Test03", description = "Validating Sign Up Section")
+    public void test03() {
+    homePage.userSignUp();
+    }
 }

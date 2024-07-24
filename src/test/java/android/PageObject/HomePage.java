@@ -4,7 +4,6 @@ import Utility.TestUtils;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
-import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -14,7 +13,7 @@ public class HomePage {
     int pause_long = 2;
     int pause_extended = 3;
 
-    private AppiumDriver driver;
+    public AndroidDriver driver;
 
     TestUtils testUtils;
 
@@ -73,6 +72,15 @@ public class HomePage {
 
     @FindBy(xpath = "//android.widget.EditText[@content-desc=\"input-password\"]")
     WebElement loginPasswordInputField;
+
+    @FindBy(xpath = "//android.widget.EditText[@content-desc=\"input-email\"]")
+    WebElement signUpEmailInputField;
+
+    @FindBy(xpath = "//android.widget.EditText[@content-desc=\"input-password\"]")
+    WebElement signUpPasswordInputField;
+
+    @FindBy(xpath = "//android.widget.EditText[@content-desc=\"input-repeat-password\"]")
+    WebElement signUpRepeatPasswordInputField;
 
 
     /**
@@ -134,10 +142,21 @@ public class HomePage {
         testUtils.enterText(loginPasswordInputField, "1234");
         testUtils.clickingOnElement(loginButton);
 
-
-
-
-
         testUtils.wait(pause_Short);
+    }
+
+    public void userSignUp () {
+        testUtils.clickingOnElement(signUpSectionButton);
+        testUtils.elementIsDisplayed(signUpEmailInputField, 60);
+        testUtils.deleteInput(signUpEmailInputField);
+        testUtils.enterText(signUpEmailInputField, "mahbubasr091@gmail.com");
+        testUtils.elementIsDisplayed(signUpPasswordInputField, 60);
+        testUtils.deleteInput(signUpPasswordInputField);
+        testUtils.enterText(signUpPasswordInputField, "12345678");
+        testUtils.elementIsDisplayed(signUpRepeatPasswordInputField, 60);
+        testUtils.deleteInput(signUpRepeatPasswordInputField);
+        testUtils.enterText(signUpRepeatPasswordInputField, "12345678");
+        testUtils.elementIsDisplayed(signUpButton, 60);
+        testUtils.clickingOnElement(signUpButton);
     }
 }
