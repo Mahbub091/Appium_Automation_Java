@@ -43,6 +43,11 @@ public class SettingIOSEnv {
     }
     @AfterClass
     public void closeApp() {
-        service.stop();
+        if (driver != null) {
+            driver.quit();
+        }
+        if (service != null) {
+            service.stop();
+        }
     }
 }

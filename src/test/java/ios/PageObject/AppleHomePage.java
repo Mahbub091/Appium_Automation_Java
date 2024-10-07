@@ -2,6 +2,7 @@ package ios.PageObject;
 
 import Utility.iOSTestUtils;
 import io.appium.java_client.ios.IOSDriver;
+import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -23,8 +24,8 @@ public class AppleHomePage {
      * Our Elements Will Be Stored Here.
      */
 
-    @FindBy(xpath = "//android.widget.TextView[@text='Accessibility']")
-    WebElement accessibilityMenu;
+    @iOSXCUITFindBy(id = "//XCUIElementTypeOther[@name=\"Login\"]")
+    WebElement text1;
 
 
     /**
@@ -32,5 +33,7 @@ public class AppleHomePage {
      */
 
     public void verifyingAccessibilityMenu(){
+        iosUtils.elementIsDisplayed(text1, 10);
+        iosUtils.clickingOnElement(text1);
     }
 }
