@@ -39,7 +39,7 @@ public class iOSTestUtils {
         }
     }
 
-    public void clickingOnElement(WebElement element, long seconds) {
+    public void clickingOnElement(WebElement element) {
         try {
             element.click();
         } catch (Exception e) {

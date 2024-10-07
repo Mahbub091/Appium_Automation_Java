@@ -117,7 +117,8 @@
                 </executions>
                 <configuration>
                     <suiteXmlFiles>
-                        <suiteXmlFile>TestSuite/appTestSuite.xml</suiteXmlFile>
+                        <suiteXmlFile>TestSuite/AndroidTestSuite.xml</suiteXmlFile>
+                        <suiteXmlFile>TestSuite/IosTestSuite.xml</suiteXmlFile>
                     </suiteXmlFiles>
                     <!--suppress UnresolvedMavenProperty -->
                     <argLine>${argLine}</argLine>

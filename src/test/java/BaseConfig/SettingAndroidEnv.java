@@ -48,6 +48,11 @@ public class SettingAndroidEnv {
 
     @AfterTest
     public void closeApp() {
-        driver.quit();
+        if (driver != null) {
+            driver.quit();
+        }
+        if (service != null) {
+            service.stop();
+        }
     }
 }
