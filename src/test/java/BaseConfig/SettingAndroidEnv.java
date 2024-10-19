@@ -34,14 +34,12 @@ public class SettingAndroidEnv {
         UiAutomator2Options options = new UiAutomator2Options ();
         options.setPlatformName("android");
         options.setAutomationName(AutomationName.ANDROID_UIAUTOMATOR2);
-
         options.setDeviceName("emulator-5544");
-        options.setApp(System.getProperty("user.dir") + "/apps/android.wdio.native.app.v1.0.8.apk");
-
+        options.setApp(System.getProperty("user.dir") + "/apps/WDioApp.apk");
 
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
 
-        System.out.println("Starting Android App through APPIUM 2.0 Server");
+        System.out.println("Starting Android App Automation through APPIUM 2.0 Server");
 
         return driver;
     }

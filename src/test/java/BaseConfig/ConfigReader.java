@@ -31,4 +31,12 @@ public class ConfigReader {
             throw new RuntimeException("App Execution Platform Is Not Defined On The Config File");
     }
 
+    public String iOSBundleID(){
+        String ios_bundle = properties.getProperty("WDIOAPPBundleId");
+        if (ios_bundle != null)
+            return ios_bundle;
+        else
+            throw new RuntimeException("App bundle ID Is Not Defined On The Config File");
+    }
+
 }

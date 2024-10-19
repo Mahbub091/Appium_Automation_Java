@@ -7,7 +7,7 @@ import android.PageObject.HomePage;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class AndroidTestAutomation  extends SettingAndroidEnv {
+public class WDioTests extends SettingAndroidEnv {
     HomePage homePage;
     TestUtils test;
     ConfigReader configReader;
@@ -18,7 +18,7 @@ public class AndroidTestAutomation  extends SettingAndroidEnv {
         configReader= new ConfigReader();
     }
 
-    @Test (testName = "Test01", description = " Verifying The Menus")
+    @Test (testName = "UserNavigatesToMenus", description = " Verifying The Menus")
     public void test01() {
         test.wait(1);
         homePage.verifyingNavigationToHomePage();
@@ -30,13 +30,13 @@ public class AndroidTestAutomation  extends SettingAndroidEnv {
         homePage.validatingHomeMenu();
     }
 
-    @Test (testName = "Test02", description = "Validating Login Sections")
+    @Test (testName = "ValidatingLoginSuccess", description = "Validating Login Sections")
     public void test02() {
         homePage.validatingLoginMenu();
         homePage.validatingLoginPageContent();
     }
 
-    @Test (testName = "Test03", description = "Validating Sign Up Section")
+    @Test (testName = "ValidatingUserSuccessSignUp", description = "Validating Success Sign Up Section")
     public void test03() {
     homePage.userSignUp();
     }

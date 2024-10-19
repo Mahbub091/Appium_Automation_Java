@@ -150,9 +150,9 @@ public class TestUtils {
         }
     }
 
-    public void scrollToDailyMovers() {
+    public void scrollToSectionWithText(String text) {
         try {
-            driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().text(\"Daily Movers\"))")).click();
+            driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().text(\"" +text+"\"))")).click();
         } catch (Exception e) {
             System.out.println("Found Issue on DailyMovers: " + e.getMessage());
         }

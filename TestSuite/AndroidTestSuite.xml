@@ -3,9 +3,11 @@
 <suite name="Android_Automation">
     <test name = "Test">
         <classes>
-            <class name="android.TestCases.AndroidTestAutomation">
+            <class name="android.TestCases.WDioTests">
                 <methods>
                     <include name="test01" />
+                    <include name="test02" />
+                    <include name="test03" />
                 </methods>
             </class>
 
