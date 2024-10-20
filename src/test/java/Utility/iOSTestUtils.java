@@ -81,9 +81,11 @@ public class iOSTestUtils {
 
     public void enterText(WebElement element, String desiredText) {
         try {
+            element.clear();
             element.sendKeys(desiredText);
+            System.out.println("Text entered successfully: " + desiredText);
         } catch (Exception e) {
-            System.out.println("Text Type Failed: " + e.getMessage());
+            System.out.println("Text entry failed: " + e.getMessage());
         }
     }
 

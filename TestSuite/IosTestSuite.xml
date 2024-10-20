@@ -7,7 +7,9 @@
                 <methods>
                     <exclude name="test01" />
                     <exclude name="test02" />
-                    <include name="test03" />
+                    <exclude name="test03" />
+                    <include name="test04" />
+                    <include name="test05" />
                 </methods>
             </class>
 
