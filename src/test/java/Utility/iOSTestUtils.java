@@ -123,8 +123,45 @@ public class iOSTestUtils {
     }
 
     public void hideKeyboard() {
-        driver.hideKeyboard();
-        System.out.println("Hiding Keyboard");
+        try {
+            // Hide the keyboard if it is displayed
+            if (driver.isKeyboardShown()) {
+                driver.hideKeyboard();
+                System.out.println("Keyboard hidden successfully.");
+            } else {
+                System.out.println("Keyboard is not displayed.");
+            }
+        } catch (Exception e) {
+            System.out.println("Failed to hide the keyboard: " + e.getMessage());
+        }
+    }
+
+    public void waitForElementInVisibility(WebElement webElement, long seconds) {
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
+            wait.until(ExpectedConditions.invisibilityOf(webElement));
+        } catch (Exception e) {
+            System.out.println("Invisibility failed: " + e.getMessage());
+        }
+    }
+
+    public boolean validateInputFieldValue(WebElement inputElement, String expectedValue) {
+        try {
+            // Get the value of the input field
+            String actualValue = inputElement.getAttribute("value");
+
+            // Validate the actual value against the expected value
+            if (actualValue.equals(expectedValue)) {
+                System.out.println("Validation successful: The value is correct.");
+                return true;
+            } else {
+                System.out.println("Validation failed: Expected value '" + expectedValue + "' but got '" + actualValue + "'");
+                return false;
+            }
+        } catch (Exception e) {
+            System.out.println("Failed to validate input field value: " + e.getMessage());
+            return false;
+        }
     }
 
 

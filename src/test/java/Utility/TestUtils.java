@@ -189,8 +189,6 @@ public class TestUtils {
         } catch (Exception e) {
             System.out.println("Invisibility failed: " + e.getMessage());
         }
-
-
     }
 
 
