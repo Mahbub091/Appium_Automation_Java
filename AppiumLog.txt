@@ -1,99 +1,21 @@
-2024-10-21 02:29:57:842 [Appium] Welcome to Appium v2.5.4 (REV e5f776b3e23cae8f1b6c3d1194b8329bf701965f)
-2024-10-21 02:29:57:843 [Appium] Non-default server args:
-2024-10-21 02:29:57:844 [Appium] { address: '127.0.0.1', localTimezone: true }
-2024-10-21 02:29:57:845 [Appium] The autodetected Appium home path: /Users/mahbuburrahman/.appium
-2024-10-21 02:29:57:846 [Appium] Attempting to load driver xcuitest...
-2024-10-21 02:29:57:846 [Appium] Attempting to load driver uiautomator2...
-2024-10-21 02:29:57:847 [Appium] Requiring driver at /Users/mahbuburrahman/.appium/node_modules/appium-xcuitest-driver/build/index.js
-2024-10-21 02:29:57:850 [Appium] Requiring driver at /Users/mahbuburrahman/.appium/node_modules/appium-uiautomator2-driver/build/index.js
-2024-10-21 02:29:59:271 [Appium] XCUITestDriver has been successfully loaded in 1.425s
-2024-10-21 02:29:59:272 [Appium] AndroidUiautomator2Driver has been successfully loaded in 1.425s
-2024-10-21 02:29:59:289 [Appium] Appium REST http interface listener started on http://127.0.0.1:4723
-2024-10-21 02:29:59:289 [Appium] Available drivers:
-2024-10-21 02:29:59:289 [Appium]   - xcuitest@7.16.2 (automationName 'XCUITest')
-2024-10-21 02:29:59:289 [Appium]   - uiautomator2@3.5.2 (automationName 'UiAutomator2')
-2024-10-21 02:29:59:289 [Appium] No plugins have been installed. Use the "appium plugin" command to install the one(s) you want to use.
-2024-10-21 02:30:11:978 [HTTP] --> GET /session/b067f314-a2bc-4f12-9ab6-1ce8a403dc5a/timeouts
-2024-10-21 02:30:11:979 [HTTP] {}
-2024-10-21 02:30:11:989 [AppiumDriver@e025] Encountered internal error running command: NoSuchDriverError: A session is either terminated or not started
-2024-10-21 02:30:11:989 [AppiumDriver@e025]     at asyncHandler (/opt/homebrew/lib/node_modules/appium/node_modules/@appium/base-driver/lib/protocol/protocol.js:315:15)
-2024-10-21 02:30:11:989 [AppiumDriver@e025]     at /opt/homebrew/lib/node_modules/appium/node_modules/@appium/base-driver/lib/protocol/protocol.js:518:15
-2024-10-21 02:30:11:989 [AppiumDriver@e025]     at Layer.handle [as handle_request] (/opt/homebrew/lib/node_modules/appium/node_modules/express/lib/router/layer.js:95:5)
-2024-10-21 02:30:11:989 [AppiumDriver@e025]     at next (/opt/homebrew/lib/node_modules/appium/node_modules/express/lib/router/route.js:149:13)
-2024-10-21 02:30:11:989 [AppiumDriver@e025]     at Route.dispatch (/opt/homebrew/lib/node_modules/appium/node_modules/express/lib/router/route.js:119:3)
-2024-10-21 02:30:11:989 [AppiumDriver@e025]     at Layer.handle [as handle_request] (/opt/homebrew/lib/node_modules/appium/node_modules/express/lib/router/layer.js:95:5)
-2024-10-21 02:30:11:989 [AppiumDriver@e025]     at /opt/homebrew/lib/node_modules/appium/node_modules/express/lib/router/index.js:284:15
-2024-10-21 02:30:11:989 [AppiumDriver@e025]     at param (/opt/homebrew/lib/node_modules/appium/node_modules/express/lib/router/index.js:365:14)
-2024-10-21 02:30:11:989 [AppiumDriver@e025]     at param (/opt/homebrew/lib/node_modules/appium/node_modules/express/lib/router/index.js:376:14)
-2024-10-21 02:30:11:989 [AppiumDriver@e025]     at Function.process_params (/opt/homebrew/lib/node_modules/appium/node_modules/express/lib/router/index.js:421:3)
-2024-10-21 02:30:11:989 [AppiumDriver@e025]     at next (/opt/homebrew/lib/node_modules/appium/node_modules/express/lib/router/index.js:280:10)
-2024-10-21 02:30:11:989 [AppiumDriver@e025]     at logger (/opt/homebrew/lib/node_modules/appium/node_modules/morgan/index.js:144:5)
-2024-10-21 02:30:11:989 [AppiumDriver@e025]     at Layer.handle [as handle_request] (/opt/homebrew/lib/node_modules/appium/node_modules/express/lib/router/layer.js:95:5)
-2024-10-21 02:30:11:990 [AppiumDriver@e025]     at trim_prefix (/opt/homebrew/lib/node_modules/appium/node_modules/express/lib/router/index.js:328:13)
-2024-10-21 02:30:11:990 [AppiumDriver@e025]     at /opt/homebrew/lib/node_modules/appium/node_modules/express/lib/router/index.js:286:9
-2024-10-21 02:30:11:990 [AppiumDriver@e025]     at Function.process_params (/opt/homebrew/lib/node_modules/appium/node_modules/express/lib/router/index.js:346:12)
-2024-10-21 02:30:11:990 [AppiumDriver@e025]     at next (/opt/homebrew/lib/node_modules/appium/node_modules/express/lib/router/index.js:280:10)
-2024-10-21 02:30:11:990 [AppiumDriver@e025]     at jsonParser (/opt/homebrew/lib/node_modules/appium/node_modules/body-parser/lib/types/json.js:113:7)
-2024-10-21 02:30:11:990 [AppiumDriver@e025]     at Layer.handle [as handle_request] (/opt/homebrew/lib/node_modules/appium/node_modules/express/lib/router/layer.js:95:5)
-2024-10-21 02:30:11:990 [AppiumDriver@e025]     at trim_prefix (/opt/homebrew/lib/node_modules/appium/node_modules/express/lib/router/index.js:328:13)
-2024-10-21 02:30:11:990 [AppiumDriver@e025]     at /opt/homebrew/lib/node_modules/appium/node_modules/express/lib/router/index.js:286:9
-2024-10-21 02:30:11:990 [AppiumDriver@e025]     at Function.process_params (/opt/homebrew/lib/node_modules/appium/node_modules/express/lib/router/index.js:346:12)
-2024-10-21 02:30:11:990 [AppiumDriver@e025]     at next (/opt/homebrew/lib/node_modules/appium/node_modules/express/lib/router/index.js:280:10)
-2024-10-21 02:30:11:990 [AppiumDriver@e025]     at Layer.handle [as handle_request] (/opt/homebrew/lib/node_modules/appium/node_modules/express/lib/router/layer.js:91:12)
-2024-10-21 02:30:11:991 [AppiumDriver@e025]     at trim_prefix (/opt/homebrew/lib/node_modules/appium/node_modules/express/lib/router/index.js:328:13)
-2024-10-21 02:30:11:991 [AppiumDriver@e025]     at /opt/homebrew/lib/node_modules/appium/node_modules/express/lib/router/index.js:286:9
-2024-10-21 02:30:11:991 [AppiumDriver@e025]     at Function.process_params (/opt/homebrew/lib/node_modules/appium/node_modules/express/lib/router/index.js:346:12)
-2024-10-21 02:30:11:991 [AppiumDriver@e025]     at next (/opt/homebrew/lib/node_modules/appium/node_modules/express/lib/router/index.js:280:10)
-2024-10-21 02:30:11:991 [AppiumDriver@e025]     at methodOverride (/opt/homebrew/lib/node_modules/appium/node_modules/method-override/index.js:65:14)
-2024-10-21 02:30:11:991 [AppiumDriver@e025]     at Layer.handle [as handle_request] (/opt/homebrew/lib/node_modules/appium/node_modules/express/lib/router/layer.js:95:5)
-2024-10-21 02:30:11:991 [AppiumDriver@e025]     at trim_prefix (/opt/homebrew/lib/node_modules/appium/node_modules/express/lib/router/index.js:328:13)
-2024-10-21 02:30:11:991 [AppiumDriver@e025]     at /opt/homebrew/lib/node_modules/appium/node_modules/express/lib/router/index.js:286:9
-2024-10-21 02:30:11:991 [AppiumDriver@e025]     at Function.process_params (/opt/homebrew/lib/node_modules/appium/node_modules/express/lib/router/index.js:346:12)
-2024-10-21 02:30:11:991 [AppiumDriver@e025]     at next (/opt/homebrew/lib/node_modules/appium/node_modules/express/lib/router/index.js:280:10)
-2024-10-21 02:30:12:000 [HTTP] <-- GET /session/b067f314-a2bc-4f12-9ab6-1ce8a403dc5a/timeouts 404 20 ms - 3900
-2024-10-21 02:30:12:000 [HTTP] 
-2024-10-21 02:30:31:898 [HTTP] --> GET /session/b067f314-a2bc-4f12-9ab6-1ce8a403dc5a/timeouts
-2024-10-21 02:30:31:900 [HTTP] {}
-2024-10-21 02:30:31:908 [AppiumDriver@e025] Encountered internal error running command: NoSuchDriverError: A session is either terminated or not started
-2024-10-21 02:30:31:908 [AppiumDriver@e025]     at asyncHandler (/opt/homebrew/lib/node_modules/appium/node_modules/@appium/base-driver/lib/protocol/protocol.js:315:15)
-2024-10-21 02:30:31:908 [AppiumDriver@e025]     at /opt/homebrew/lib/node_modules/appium/node_modules/@appium/base-driver/lib/protocol/protocol.js:518:15
-2024-10-21 02:30:31:908 [AppiumDriver@e025]     at Layer.handle [as handle_request] (/opt/homebrew/lib/node_modules/appium/node_modules/express/lib/router/layer.js:95:5)
-2024-10-21 02:30:31:908 [AppiumDriver@e025]     at next (/opt/homebrew/lib/node_modules/appium/node_modules/express/lib/router/route.js:149:13)
-2024-10-21 02:30:31:908 [AppiumDriver@e025]     at Route.dispatch (/opt/homebrew/lib/node_modules/appium/node_modules/express/lib/router/route.js:119:3)
-2024-10-21 02:30:31:908 [AppiumDriver@e025]     at Layer.handle [as handle_request] (/opt/homebrew/lib/node_modules/appium/node_modules/express/lib/router/layer.js:95:5)
-2024-10-21 02:30:31:908 [AppiumDriver@e025]     at /opt/homebrew/lib/node_modules/appium/node_modules/express/lib/router/index.js:284:15
-2024-10-21 02:30:31:908 [AppiumDriver@e025]     at param (/opt/homebrew/lib/node_modules/appium/node_modules/express/lib/router/index.js:365:14)
-2024-10-21 02:30:31:908 [AppiumDriver@e025]     at param (/opt/homebrew/lib/node_modules/appium/node_modules/express/lib/router/index.js:376:14)
-2024-10-21 02:30:31:908 [AppiumDriver@e025]     at Function.process_params (/opt/homebrew/lib/node_modules/appium/node_modules/express/lib/router/index.js:421:3)
-2024-10-21 02:30:31:908 [AppiumDriver@e025]     at next (/opt/homebrew/lib/node_modules/appium/node_modules/express/lib/router/index.js:280:10)
-2024-10-21 02:30:31:909 [AppiumDriver@e025]     at logger (/opt/homebrew/lib/node_modules/appium/node_modules/morgan/index.js:144:5)
-2024-10-21 02:30:31:909 [AppiumDriver@e025]     at Layer.handle [as handle_request] (/opt/homebrew/lib/node_modules/appium/node_modules/express/lib/router/layer.js:95:5)
-2024-10-21 02:30:31:909 [AppiumDriver@e025]     at trim_prefix (/opt/homebrew/lib/node_modules/appium/node_modules/express/lib/router/index.js:328:13)
-2024-10-21 02:30:31:909 [AppiumDriver@e025]     at /opt/homebrew/lib/node_modules/appium/node_modules/express/lib/router/index.js:286:9
-2024-10-21 02:30:31:909 [AppiumDriver@e025]     at Function.process_params (/opt/homebrew/lib/node_modules/appium/node_modules/express/lib/router/index.js:346:12)
-2024-10-21 02:30:31:909 [AppiumDriver@e025]     at next (/opt/homebrew/lib/node_modules/appium/node_modules/express/lib/router/index.js:280:10)
-2024-10-21 02:30:31:909 [AppiumDriver@e025]     at jsonParser (/opt/homebrew/lib/node_modules/appium/node_modules/body-parser/lib/types/json.js:113:7)
-2024-10-21 02:30:31:909 [AppiumDriver@e025]     at Layer.handle [as handle_request] (/opt/homebrew/lib/node_modules/appium/node_modules/express/lib/router/layer.js:95:5)
-2024-10-21 02:30:31:909 [AppiumDriver@e025]     at trim_prefix (/opt/homebrew/lib/node_modules/appium/node_modules/express/lib/router/index.js:328:13)
-2024-10-21 02:30:31:911 [AppiumDriver@e025]     at /opt/homebrew/lib/node_modules/appium/node_modules/express/lib/router/index.js:286:9
-2024-10-21 02:30:31:911 [AppiumDriver@e025]     at Function.process_params (/opt/homebrew/lib/node_modules/appium/node_modules/express/lib/router/index.js:346:12)
-2024-10-21 02:30:31:911 [AppiumDriver@e025]     at next (/opt/homebrew/lib/node_modules/appium/node_modules/express/lib/router/index.js:280:10)
-2024-10-21 02:30:31:911 [AppiumDriver@e025]     at Layer.handle [as handle_request] (/opt/homebrew/lib/node_modules/appium/node_modules/express/lib/router/layer.js:91:12)
-2024-10-21 02:30:31:911 [AppiumDriver@e025]     at trim_prefix (/opt/homebrew/lib/node_modules/appium/node_modules/express/lib/router/index.js:328:13)
-2024-10-21 02:30:31:911 [AppiumDriver@e025]     at /opt/homebrew/lib/node_modules/appium/node_modules/express/lib/router/index.js:286:9
-2024-10-21 02:30:31:911 [AppiumDriver@e025]     at Function.process_params (/opt/homebrew/lib/node_modules/appium/node_modules/express/lib/router/index.js:346:12)
-2024-10-21 02:30:31:911 [AppiumDriver@e025]     at next (/opt/homebrew/lib/node_modules/appium/node_modules/express/lib/router/index.js:280:10)
-2024-10-21 02:30:31:911 [AppiumDriver@e025]     at methodOverride (/opt/homebrew/lib/node_modules/appium/node_modules/method-override/index.js:65:14)
-2024-10-21 02:30:31:911 [AppiumDriver@e025]     at Layer.handle [as handle_request] (/opt/homebrew/lib/node_modules/appium/node_modules/express/lib/router/layer.js:95:5)
-2024-10-21 02:30:31:911 [AppiumDriver@e025]     at trim_prefix (/opt/homebrew/lib/node_modules/appium/node_modules/express/lib/router/index.js:328:13)
-2024-10-21 02:30:31:911 [AppiumDriver@e025]     at /opt/homebrew/lib/node_modules/appium/node_modules/express/lib/router/index.js:286:9
-2024-10-21 02:30:31:911 [AppiumDriver@e025]     at Function.process_params (/opt/homebrew/lib/node_modules/appium/node_modules/express/lib/router/index.js:346:12)
-2024-10-21 02:30:31:912 [AppiumDriver@e025]     at next (/opt/homebrew/lib/node_modules/appium/node_modules/express/lib/router/index.js:280:10)
-2024-10-21 02:30:31:913 [HTTP] <-- GET /session/b067f314-a2bc-4f12-9ab6-1ce8a403dc5a/timeouts 404 17 ms - 3900
-2024-10-21 02:30:31:913 [HTTP] 
-2024-10-21 02:30:35:866 [Appium] Received SIGTERM - shutting down
-2024-10-21 02:30:35:866 [AppiumDriver@e025] There are no active sessions for cleanup
-2024-10-21 02:30:35:876 uncaughtException: write EPIPE
+2024-10-21 03:06:08:502 [Appium] Welcome to Appium v2.5.4 (REV e5f776b3e23cae8f1b6c3d1194b8329bf701965f)
+2024-10-21 03:06:08:504 [Appium] Non-default server args:
+2024-10-21 03:06:08:504 [Appium] { address: '127.0.0.1', localTimezone: true }
+2024-10-21 03:06:08:505 [Appium] The autodetected Appium home path: /Users/mahbuburrahman/.appium
+2024-10-21 03:06:08:506 [Appium] Attempting to load driver xcuitest...
+2024-10-21 03:06:08:506 [Appium] Attempting to load driver uiautomator2...
+2024-10-21 03:06:08:507 [Appium] Requiring driver at /Users/mahbuburrahman/.appium/node_modules/appium-xcuitest-driver/build/index.js
+2024-10-21 03:06:08:510 [Appium] Requiring driver at /Users/mahbuburrahman/.appium/node_modules/appium-uiautomator2-driver/build/index.js
+2024-10-21 03:06:09:950 [Appium] XCUITestDriver has been successfully loaded in 1.443s
+2024-10-21 03:06:09:950 [Appium] AndroidUiautomator2Driver has been successfully loaded in 1.444s
+2024-10-21 03:06:09:967 [Appium] Appium REST http interface listener started on http://127.0.0.1:4723
+2024-10-21 03:06:09:967 [Appium] Available drivers:
+2024-10-21 03:06:09:968 [Appium]   - xcuitest@7.16.2 (automationName 'XCUITest')
+2024-10-21 03:06:09:968 [Appium]   - uiautomator2@3.5.2 (automationName 'UiAutomator2')
+2024-10-21 03:06:09:968 [Appium] No plugins have been installed. Use the "appium plugin" command to install the one(s) you want to use.
+2024-10-21 03:07:10:575 [Appium] Received SIGTERM - shutting down
+2024-10-21 03:07:10:577 [AppiumDriver@83c2] There are no active sessions for cleanup
+2024-10-21 03:07:10:585 uncaughtException: write EPIPE
 Error: write EPIPE
     at afterWriteDispatched (node:internal/stream_base_commons:160:15)
     at writeGeneric (node:internal/stream_base_commons:151:3)
@@ -128,7 +50,7 @@ Error: write EPIPE
     at process.onSignal (/opt/homebrew/lib/node_modules/appium/lib/main.js:419:14)
     at Object.onceWrapper (node:events:634:26)
     at process.emit (node:events:531:35)
-2024-10-21 02:30:35:877 uncaughtException: write EPIPE
+2024-10-21 03:07:10:587 uncaughtException: write EPIPE
 Error: write EPIPE
     at afterWriteDispatched (node:internal/stream_base_commons:160:15)
     at writeGeneric (node:internal/stream_base_commons:151:3)
@@ -164,7 +86,7 @@ Error: write EPIPE
     at processEmit (/Users/mahbuburrahman/node_modules/lockfile/node_modules/signal-exit/index.js:199:34)
     at process.emit (/Users/mahbuburrahman/node_modules/source-map-support/source-map-support.js:516:21)
     at process.emit (/Users/mahbuburrahman/.appium/node_modules/appium-uiautomator2-driver/node_modules/source-map-support/source-map-support.js:516:21)
-2024-10-21 02:30:35:878 uncaughtException: write EPIPE
+2024-10-21 03:07:10:588 uncaughtException: write EPIPE
 Error: write EPIPE
     at afterWriteDispatched (node:internal/stream_base_commons:160:15)
     at writeGeneric (node:internal/stream_base_commons:151:3)
@@ -200,7 +122,7 @@ Error: write EPIPE
     at processEmit (/Users/mahbuburrahman/node_modules/lockfile/node_modules/signal-exit/index.js:199:34)
     at process.emit (/Users/mahbuburrahman/node_modules/source-map-support/source-map-support.js:516:21)
     at process.emit (/Users/mahbuburrahman/.appium/node_modules/appium-uiautomator2-driver/node_modules/source-map-support/source-map-support.js:516:21)
-2024-10-21 02:30:35:879 uncaughtException: write EPIPE
+2024-10-21 03:07:10:589 uncaughtException: write EPIPE
 Error: write EPIPE
     at afterWriteDispatched (node:internal/stream_base_commons:160:15)
     at writeGeneric (node:internal/stream_base_commons:151:3)
@@ -236,7 +158,7 @@ Error: write EPIPE
     at processEmit (/Users/mahbuburrahman/node_modules/lockfile/node_modules/signal-exit/index.js:199:34)
     at process.emit (/Users/mahbuburrahman/node_modules/source-map-support/source-map-support.js:516:21)
     at process.emit (/Users/mahbuburrahman/.appium/node_modules/appium-uiautomator2-driver/node_modules/source-map-support/source-map-support.js:516:21)
-2024-10-21 02:30:35:881 uncaughtException: write EPIPE
+2024-10-21 03:07:10:589 uncaughtException: write EPIPE
 Error: write EPIPE
     at afterWriteDispatched (node:internal/stream_base_commons:160:15)
     at writeGeneric (node:internal/stream_base_commons:151:3)

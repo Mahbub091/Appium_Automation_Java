@@ -38,9 +38,23 @@ public class SwagLabsAppAutomation extends SettingIOSEnv {
         homePage.validatingTextOnPage();
     }
 
-    @Test(testName = "LoginPageValidation", description = "Verify Text On Home Page")
+    @Test(testName = "WrongEmailValidation", description = "Verify Text On Home Page")
     public void test03() {
-        loginPage.populatingTheLoginForm();
+        loginPage.attemptingIncompleteEmailLogin();
+    }
+
+    @Test(testName = "WrongPasswordValidation", description = "User Inserts Wrong Password")
+    public void test04() {
+        loginPage.attemptingWrongPasswordLogin();
+    }
+
+    @Test(testName = "RandomEmailValidation", description = "User Inserts Not Registered Email")
+    public void test05() {
+        loginPage.attemptingRandomEmailLogin();
+    }
+
+    @Test(testName = "ValidUserSignUp", description = "User Tries to SignUp Using Valid Details")
+    public void test010() {
         loginPage.populatingTheSignUpForm();
     }
 }
