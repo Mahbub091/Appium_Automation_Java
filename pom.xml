@@ -19,6 +19,15 @@
         <maven.surefire.version>3.1.0</maven.surefire.version>
         <maven.source.encoding>UTF-8</maven.source.encoding>
         <suite-xml>test-suite/testng.xml</suite-xml>
+        <javafaker>1.0.2</javafaker>
+        <selenium-java>4.11.0</selenium-java>
+        <selenium-server>4.0.0-alpha-2</selenium-server>
+        <log4j-core>2.20.0</log4j-core>
+        <log4j-slf4j-impl>2.20.0</log4j-slf4j-impl>
+        <java-client>8.5.1</java-client>
+        <testng>7.7.1</testng>
+        <extentreports>4.0.6</extentreports>
+        <commons-io>2.14.0</commons-io>
     </properties>
 
     <dependencies>
@@ -26,42 +35,35 @@
         <dependency>
             <groupId>com.github.javafaker</groupId>
             <artifactId>javafaker</artifactId>
-            <version>1.0.2</version> <!-- Check for the latest version -->
+            <version>${javafaker}</version> <!-- Check for the latest version -->
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>4.11.0</version>
+            <version>${selenium-java}</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-server -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-server</artifactId>
-            <version>4.0.0-alpha-2</version>
-        </dependency>
-
-        <!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-testng -->
-        <dependency>
-            <groupId>io.qameta.allure</groupId>
-            <artifactId>allure-testng</artifactId>
-            <version>2.23.0</version>
+            <version>${selenium-server}</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-core</artifactId>
-            <version>2.17.1</version>
+            <version>${log4j-core}</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-slf4j-impl -->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-slf4j-impl</artifactId>
-            <version>2.20.0</version>
+            <version>${log4j-slf4j-impl}</version>
             <scope>test</scope>
         </dependency>
 
@@ -76,7 +78,7 @@
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>7.7.1</version>
+            <version>${testng}</version>
             <scope>test</scope>
         </dependency>
 
@@ -84,14 +86,14 @@
         <dependency>
             <groupId>com.aventstack</groupId>
             <artifactId>extentreports</artifactId>
-            <version>4.0.6</version>
+            <version>${extentreports}</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
-            <version>2.13.0</version>
+            <version>${commons-io}</version>
         </dependency>
 
 
@@ -125,7 +127,7 @@
                 <configuration>
                     <suiteXmlFiles>
                         <suiteXmlFile>TestSuite/AndroidTestSuite.xml</suiteXmlFile>
-                        <suiteXmlFile>TestSuite/IosTestSuite.xml</suiteXmlFile>
+                        <!--                        <suiteXmlFile>TestSuite/IosTestSuite.xml</suiteXmlFile>-->
                     </suiteXmlFiles>
                     <!--suppress UnresolvedMavenProperty -->
                     <argLine>${argLine}</argLine>

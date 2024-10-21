@@ -21,7 +21,7 @@ public class SettingIOSEnv {
     public IOSDriver setup() throws MalformedURLException {
         service = new AppiumServiceBuilder()
                 .withArgument(GeneralServerFlag.LOCAL_TIMEZONE)
-                .withLogFile(new File(System.getProperty("user.dir") + "/AppiumLog.txt"))
+                .withLogFile(new File(System.getProperty("user.dir") + "/reports/AppiumLog.txt"))
                 .withIPAddress("127.0.0.1")
                 .usingPort(4723)
                 .withTimeout(Duration.ofSeconds(60))
