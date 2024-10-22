@@ -94,6 +94,7 @@ public class HomePage {
     }
 
     public void validatingWebViewMenu() {
+        testUtils.wait(2);
         testUtils.elementIsDisplayed(webView, 60);
         testUtils.verifyText(webView, "\uDB81\uDD9F");
         testUtils.clickingOnElement(webView);
