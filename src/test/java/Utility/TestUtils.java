@@ -6,8 +6,12 @@ import java.util.Collections;
 
 import com.google.common.collect.ImmutableMap;
 import io.appium.java_client.AppiumBy;
+import io.qameta.allure.Allure;
 import io.qameta.allure.Step;
-import org.openqa.selenium.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Pause;
 import org.openqa.selenium.interactions.PointerInput;
 import org.openqa.selenium.interactions.Sequence;
@@ -28,6 +32,7 @@ public class TestUtils {
         this.driver = driver;
     }
     @Step("Waiting for {seconds} seconds")
+    @Step("Waiting for {seconds} seconds")
     public void wait(int seconds) {
         try {
             Thread.sleep(seconds * 1000);
@@ -35,6 +40,7 @@ public class TestUtils {
             System.out.println("Sleep interrupted: " + e.getMessage());
         }
     }
+    @Step("Asserting {text} for {locator}")
     @Step("Asserting {text} for {locator}")
     public void assertText(WebElement locator, String text) {
         try {
@@ -44,6 +50,7 @@ public class TestUtils {
         }
     }
     @Step("Clicking on ::::::::-> {element}")
+    @Step("Clicking on ::::::::-> {element}")
     public void clickingOnElement(WebElement element) {
         try {
             element.click();
@@ -51,6 +58,7 @@ public class TestUtils {
             System.out.println("Click failed for element: " + e.getMessage());
         }
     }
+    @Step("Verifying Element  is displayed within {seconds} seconds for ::::::::-> {element}")
     @Step("Verifying Element  is displayed within {seconds} seconds for ::::::::-> {element}")
     public void elementIsDisplayed(WebElement element, long seconds) {
         try{
@@ -62,6 +70,7 @@ public class TestUtils {
     }
 
     @Step("Verifying {text} is available ::::::::-> {element}")
+    @Step("Verifying {text} is available ::::::::-> {element}")
     public void verifyText(WebElement element, String text) {
         try{
             element.getText().equalsIgnoreCase(text);
@@ -72,6 +81,7 @@ public class TestUtils {
     }
 
     @Step("User clicks on Back Button")
+    @Step("User clicks on Back Button")
     public void pressBack() {
         try {
             driver.pressKey(new KeyEvent().withKey(AndroidKey.BACK));
@@ -81,6 +91,7 @@ public class TestUtils {
     }
 
     @Step("Entering {inputText} on ::::::::-> {element}")
+    @Step("Entering {inputText} on ::::::::-> {element}")
     public void enterText(WebElement element, String inputText) {
         try {
             element.sendKeys(inputText);
@@ -89,6 +100,7 @@ public class TestUtils {
         }
     }
 
+    @Step("Swipping from ::::::::->{swipeEndY} to ::::::::->{swipeStartY}")
     @Step("Swipping from ::::::::->{swipeEndY} to ::::::::->{swipeStartY}")
     public void swipeUp( int swipeEndY, int swipeStartY) {
         try{
@@ -112,6 +124,7 @@ public class TestUtils {
     }
 
     @Step("Swiping Right to Left of screen ::::::::->")
+    @Step("Swiping Right to Left of screen ::::::::->")
     public void swipeRightToLeft() {
         WebElement element = driver.findElement(By.xpath("//androidx.recyclerview.widget.RecyclerView[@index='5']"));
 
@@ -127,10 +140,8 @@ public class TestUtils {
     }
 
     @Step("Swiping Bottom to Up of screen ::::::::->")
-    public void swipeBottomToUp(String locator) {
-        WebElement element;
-        try {
-            element = driver.findElement(By.xpath(locator));
+    public void swipeBottomToUp() {
+        WebElement element = driver.findElement(By.xpath("//android.widget.ImageView[@resource-id=\'com.techetronventures.trek:id/lottieSwipeAnimation\']"));
 
             ((JavascriptExecutor) driver).executeScript("mobile: swipeGesture", ImmutableMap.of(
                     "elementId", ((RemoteWebElement) element).getId(),
@@ -142,6 +153,7 @@ public class TestUtils {
         }
     }
 
+    @Step("Swiping Hero Animation ::::::::->")
     @Step("Swiping Hero Animation ::::::::->")
     public void heroAnimationSwipe() {
         WebElement element = driver.findElement(By.xpath("//androidx.recyclerview.widget.RecyclerView[index=0]"));
@@ -157,6 +169,7 @@ public class TestUtils {
     }
 
     @Step("scrolling to section with ::::::::-> {text}")
+    @Step("scrolling to section with ::::::::-> {text}")
     public void scrollToSectionWithText(String text) {
         try {
             driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().text(\"" +text+"\"))")).click();
@@ -167,13 +180,17 @@ public class TestUtils {
 
     @Step("scroll and Clicking On ::::::::-> {text}")
     public void clickOnLogOut(String text) {
+    @Step("scroll and Clicking On ::::::::-> {text}")
+    public void clickOnLogOut(String text) {
         try {
+            driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().text(\""+text+"\"))")).click();
             driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().text(\""+text+"\"))")).click();
         } catch (Exception e) {
             System.out.println("Found Issue on Log Out: " + e.getMessage());
         }
     }
 
+    @Step("Deleting text from ::::::::-> {element}")
     @Step("Deleting text from ::::::::-> {element}")
     public void deleteInput(WebElement element) {
         try {
@@ -184,6 +201,7 @@ public class TestUtils {
     }
 
     @Step("Validating CSS value for {element} on ::::::::->{cssValue} ::::::::->is equal {value}")
+    @Step("Validating CSS value for {element} on ::::::::->{cssValue} ::::::::->is equal {value}")
     public void getCssValue(WebElement element, String cssValue, String value) {
         try {
             Assert.assertTrue(element.getCssValue(cssValue).equals(value));
@@ -191,6 +209,7 @@ public class TestUtils {
             System.out.println("Failed to get CSS value" + e.getMessage());
         }
     }
+    @Step("Waiting {seconds} for the Invisibility of ::::::::->{webElement}")
     @Step("Waiting {seconds} for the Invisibility of ::::::::->{webElement}")
     public void waitForElementInVisibility(WebElement webElement, long seconds) {
         try {
