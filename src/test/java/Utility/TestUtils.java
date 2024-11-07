@@ -6,7 +6,6 @@ import java.util.Collections;
 
 import com.google.common.collect.ImmutableMap;
 import io.appium.java_client.AppiumBy;
-import io.qameta.allure.Allure;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
@@ -140,8 +139,10 @@ public class TestUtils {
     }
 
     @Step("Swiping Bottom to Up of screen ::::::::->")
-    public void swipeBottomToUp() {
-        WebElement element = driver.findElement(By.xpath("//android.widget.ImageView[@resource-id=\'com.techetronventures.trek:id/lottieSwipeAnimation\']"));
+    public void swipeBottomToUp(String locator) {
+        WebElement element;
+        try {
+            element = driver.findElement(By.xpath(locator));
 
             ((JavascriptExecutor) driver).executeScript("mobile: swipeGesture", ImmutableMap.of(
                     "elementId", ((RemoteWebElement) element).getId(),
