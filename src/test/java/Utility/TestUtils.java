@@ -1,15 +1,13 @@
 package Utility;
 
 import java.time.Duration;
+import java.util.Arrays;
 import java.util.Collections;
 
 import com.google.common.collect.ImmutableMap;
 import io.appium.java_client.AppiumBy;
 import io.qameta.allure.Step;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Pause;
 import org.openqa.selenium.interactions.PointerInput;
 import org.openqa.selenium.interactions.Sequence;
@@ -201,6 +199,43 @@ public class TestUtils {
         } catch (Exception e) {
             System.out.println("Invisibility failed: " + e.getMessage());
         }
+    }
+
+    @Step("Long Tapping on ::::::::-> {WebElement}")
+    public void longPressOnElement(WebElement webElement) {
+
+        PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
+        Sequence longPress = new Sequence(finger, 1);
+
+        longPress.addAction(finger.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), webElement.getLocation().getX(), webElement.getLocation().getY()));
+        longPress.addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
+        longPress.addAction(new Pause(finger, Duration.ofSeconds(2)));
+
+        longPress.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
+
+        driver.perform(Collections.singletonList(longPress));
+    }
+
+    @Step("Perform Dragging from ::::::::-> {Source} to ::::::::-> {Target} Element")
+    public void dragAndDrop(WebElement source, WebElement target) {
+        Point sourcePoint = source.getLocation();
+        int startX = sourcePoint.getX();
+        int startY = sourcePoint.getY();
+
+        Point targetPoint = target.getLocation();
+        int endX = targetPoint.getX();
+        int endY = targetPoint.getY();
+
+        PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
+
+        Sequence dragAndDrop = new Sequence(finger, 1);
+        dragAndDrop.addAction(finger.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), startX, startY));
+        dragAndDrop.addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
+        dragAndDrop.addAction(new Pause(finger, Duration.ofMillis(500)));
+        dragAndDrop.addAction(finger.createPointerMove(Duration.ofMillis(1000), PointerInput.Origin.viewport(), endX, endY));
+        dragAndDrop.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
+
+        driver.perform(Arrays.asList(dragAndDrop));
     }
 
 

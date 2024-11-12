@@ -2,9 +2,12 @@ package ios.PageObject;
 
 import Utility.iOSTestUtils;
 import io.appium.java_client.ios.IOSDriver;
+import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import java.time.Duration;
 
 public class HomePage {
     int pause_Short = 1;
@@ -22,34 +25,33 @@ public class HomePage {
     SwipePage swipePage;
 
     public HomePage(IOSDriver iosDriver) {
-        PageFactory.initElements(iosDriver, this);
+        PageFactory.initElements(new AppiumFieldDecorator(iosDriver, Duration.ofSeconds(10)), this);
         webViewPage= new WebViewPage(iosDriver);
         loginPage= new LoginPage(iosDriver);
         formsPage = new FormsPage(iosDriver);
         swipePage = new SwipePage(iosDriver);
         iosUtils = new iOSTestUtils(iosDriver);
-
     }
 
-    /**
+    /*
      * Our Elements Will Be Stored Here.
      */
 
     //XCUIElementTypeOther[@name="Home"]
 
-    @FindBy(xpath = "//XCUIElementTypeOther[@name=\"Home\"]")
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name=\"Home\"]")
     WebElement homeMenu;
 
-    @FindBy(className = "XCUIElementTypeScrollView")
+    @iOSXCUITFindBy(className = "XCUIElementTypeScrollView")
     WebElement homeScreen;
 
-    @FindBy(xpath = "//XCUIElementTypeOther[@name=\"WEBDRIVER I/O Demo app for the appium-boilerplate\"]")
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name=\"WEBDRIVER I/O Demo app for the appium-boilerplate\"]")
     WebElement homeMenuText;
 
-    @FindBy(xpath = "//XCUIElementTypeStaticText[@name=\"WEBDRIVER\"]")
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@name=\"WEBDRIVER\"]")
     WebElement homeMenuHeaderText;
 
-    @FindBy(xpath = "//XCUIElementTypeStaticText[@name=\"Demo app for the appium-boilerplate\"]")
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@name=\"Demo app for the appium-boilerplate\"]")
     WebElement homeMenuSubText;
 
 
