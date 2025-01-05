@@ -1,9 +1,9 @@
 package android.PageObject;
 
 import Utility.TestUtils;
-import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
+import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -13,73 +13,76 @@ public class HomePage {
     int pause_long = 2;
     int pause_extended = 3;
 
+    int short_element_find = 10;
+    int long_element_find = 20;
+    int extended_element_find = 30;
+
     public AndroidDriver driver;
 
     TestUtils testUtils;
 
     public HomePage(AndroidDriver driver) {
         this.driver = driver;
-        PageFactory.initElements(driver, this);
+        PageFactory.initElements(new AppiumFieldDecorator(driver), this);
         testUtils = new TestUtils(driver);
-
     }
 
     /**
      * Our Elements Will Be Stored Here.
      */
 
-    @FindBy(xpath = "//android.widget.ScrollView[@content-desc=\"Home-screen\"]/android.view.ViewGroup/android.widget.ImageView[1]")
+    @AndroidFindBy(xpath = "//android.widget.ScrollView[@content-desc=\"Home-screen\"]/android.view.ViewGroup/android.widget.ImageView[1]")
     WebElement robotIcon;
 
-    @FindBy(xpath = "//android.widget.ScrollView[@content-desc=\"Home-screen\"]/android.view.ViewGroup/android.widget.TextView[2]")
+    @AndroidFindBy(xpath = "//android.widget.ScrollView[@content-desc=\"Home-screen\"]/android.view.ViewGroup/android.widget.TextView[2]")
     WebElement demoText;
 
-    @FindBy(xpath = "//android.view.View[@content-desc=\"Home\"]/android.widget.TextView[1]")
+    @AndroidFindBy(xpath = "//android.view.View[@content-desc=\"Home\"]/android.widget.TextView[1]")
     WebElement homeMenu;
 
-    @FindBy(xpath = "//android.view.View[@content-desc=\"Webview\"]/android.widget.TextView[1]")
+    @AndroidFindBy(xpath = "//android.view.View[@content-desc=\"Webview\"]/android.widget.TextView[1]")
     WebElement webView;
 
-    @FindBy(xpath = "//android.view.View[@content-desc=\"Login\"]/android.widget.TextView[1]")
+    @AndroidFindBy(accessibility = "Login")
     WebElement login;
 
-    @FindBy(xpath = "//android.view.View[@content-desc=\"Forms\"]/android.widget.TextView[1]")
+    @AndroidFindBy(xpath = "//android.view.View[@content-desc=\"Forms\"]/android.widget.TextView[1]")
     WebElement forms;
 
-    @FindBy(xpath = "//android.view.View[@content-desc=\"Swipe\"]/android.widget.TextView[1]")
+    @AndroidFindBy(xpath = "//android.view.View[@content-desc=\"Swipe\"]/android.widget.TextView[1]")
     WebElement swipe;
 
-    @FindBy(xpath = "//android.view.View[@content-desc=\"Drag\"]/android.widget.TextView[1]")
+    @AndroidFindBy(xpath = "//android.view.View[@content-desc=\"Drag\"]/android.widget.TextView[1]")
     WebElement drag;
 
-    @FindBy(xpath = "//android.widget.ScrollView[@content-desc=\"Login-screen\"]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.TextView")
+    @AndroidFindBy(xpath = "//android.widget.ScrollView[@content-desc=\"Login-screen\"]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.TextView")
     WebElement loginMenuHeader;
 
-    @FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"button-login-container\"]/android.view.ViewGroup/android.widget.TextView")
+    @AndroidFindBy(xpath = "//android.view.ViewGroup[@content-desc=\"button-login-container\"]/android.view.ViewGroup/android.widget.TextView")
     WebElement loginSectionButton;
 
-    @FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"button-sign-up-container\"]/android.view.ViewGroup/android.widget.TextView")
+    @AndroidFindBy(xpath = "//android.view.ViewGroup[@content-desc=\"button-sign-up-container\"]/android.view.ViewGroup/android.widget.TextView")
     WebElement signUpSectionButton;
 
-    @FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"button-LOGIN\"]/android.view.ViewGroup")
+    @AndroidFindBy(xpath = "//android.view.ViewGroup[@content-desc=\"button-LOGIN\"]/android.view.ViewGroup")
     WebElement loginButton;
 
-    @FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"button-SIGN UP\"]/android.view.ViewGroup/android.widget.TextView")
+    @AndroidFindBy(xpath = "//android.view.ViewGroup[@content-desc=\"button-SIGN UP\"]/android.view.ViewGroup/android.widget.TextView")
     WebElement signUpButton;
 
-    @FindBy(xpath = "//android.widget.EditText[@content-desc=\"input-email\"]")
+    @AndroidFindBy(xpath = "//android.widget.EditText[@content-desc=\"input-email\"]")
     WebElement loginEmailInputField;
 
-    @FindBy(xpath = "//android.widget.EditText[@content-desc=\"input-password\"]")
+    @AndroidFindBy(xpath = "//android.widget.EditText[@content-desc=\"input-password\"]")
     WebElement loginPasswordInputField;
 
-    @FindBy(xpath = "//android.widget.EditText[@content-desc=\"input-email\"]")
+    @AndroidFindBy(xpath = "//android.widget.EditText[@content-desc=\"input-email\"]")
     WebElement signUpEmailInputField;
 
-    @FindBy(xpath = "//android.widget.EditText[@content-desc=\"input-password\"]")
+    @AndroidFindBy(xpath = "//android.widget.EditText[@content-desc=\"input-password\"]")
     WebElement signUpPasswordInputField;
 
-    @FindBy(xpath = "//android.widget.EditText[@content-desc=\"input-repeat-password\"]")
+    @AndroidFindBy(xpath = "//android.widget.EditText[@content-desc=\"input-repeat-password\"]")
     WebElement signUpRepeatPasswordInputField;
 
 
@@ -94,6 +97,7 @@ public class HomePage {
     }
 
     public void validatingWebViewMenu() {
+        testUtils.wait(2);
         testUtils.elementIsDisplayed(webView, 60);
         testUtils.verifyText(webView, "\uDB81\uDD9F");
         testUtils.clickingOnElement(webView);

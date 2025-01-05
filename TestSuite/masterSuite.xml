@@ -1,0 +1,7 @@
+<!-- master-suite.xml -->
+<suite name="MasterSuite">
+    <suite-files>
+        <suite-file path="AndroidTestSuite.xml"/>
+        <suite-file path="IosTestSuite.xml"/>
+    </suite-files>
+</suite>

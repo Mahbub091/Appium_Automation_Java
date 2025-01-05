@@ -1,14 +1,13 @@
 package Utility;
 
 import java.time.Duration;
+import java.util.Arrays;
 import java.util.Collections;
 
 import com.google.common.collect.ImmutableMap;
 import io.appium.java_client.AppiumBy;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
+import io.qameta.allure.Step;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Pause;
 import org.openqa.selenium.interactions.PointerInput;
 import org.openqa.selenium.interactions.Sequence;
@@ -28,7 +27,7 @@ public class TestUtils {
     public TestUtils(AndroidDriver driver) {
         this.driver = driver;
     }
-
+    @Step("Waiting for {seconds} seconds")
     public void wait(int seconds) {
         try {
             Thread.sleep(seconds * 1000);
@@ -36,15 +35,15 @@ public class TestUtils {
             System.out.println("Sleep interrupted: " + e.getMessage());
         }
     }
-
+    @Step("Asserting {text} for {locator}")
     public void assertText(WebElement locator, String text) {
         try {
-            Assert.assertTrue(locator.getText().equals(text));
+            Assert.assertEquals(text, locator.getText());
         } catch (Exception e) {
             System.out.println("text assertion: " + e.getMessage());
         }
     }
-
+    @Step("Clicking on ::::::::-> {element}")
     public void clickingOnElement(WebElement element) {
         try {
             element.click();
@@ -52,7 +51,7 @@ public class TestUtils {
             System.out.println("Click failed for element: " + e.getMessage());
         }
     }
-
+    @Step("Verifying Element  is displayed within {seconds} seconds for ::::::::-> {element}")
     public void elementIsDisplayed(WebElement element, long seconds) {
         try{
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
@@ -62,6 +61,7 @@ public class TestUtils {
         }
     }
 
+    @Step("Verifying {text} is available ::::::::-> {element}")
     public void verifyText(WebElement element, String text) {
         try{
             element.getText().equalsIgnoreCase(text);
@@ -71,6 +71,7 @@ public class TestUtils {
         }
     }
 
+    @Step("User clicks on Back Button")
     public void pressBack() {
         try {
             driver.pressKey(new KeyEvent().withKey(AndroidKey.BACK));
@@ -79,6 +80,7 @@ public class TestUtils {
         }
     }
 
+    @Step("Entering {inputText} on ::::::::-> {element}")
     public void enterText(WebElement element, String inputText) {
         try {
             element.sendKeys(inputText);
@@ -87,7 +89,7 @@ public class TestUtils {
         }
     }
 
-
+    @Step("Swipping from ::::::::->{swipeEndY} to ::::::::->{swipeStartY}")
     public void swipeUp( int swipeEndY, int swipeStartY) {
         try{
             Dimension size = driver.manage().window().getSize();
@@ -109,6 +111,7 @@ public class TestUtils {
         }
     }
 
+    @Step("Swiping Right to Left of screen ::::::::->")
     public void swipeRightToLeft() {
         WebElement element = driver.findElement(By.xpath("//androidx.recyclerview.widget.RecyclerView[@index='5']"));
 
@@ -123,10 +126,12 @@ public class TestUtils {
         }
     }
 
-    public void swipeBottomToUp() {
-        WebElement element = driver.findElement(By.xpath("//android.widget.ImageView[@resource-id=\'com.techetronventures.trek:id/lottieSwipeAnimation\']"));
+    @Step("Swiping Bottom to Up of screen ::::::::->")
+    public void swipeBottomToUp(String locator) {
+        WebElement element;
+        try {
+            element = driver.findElement(By.xpath(locator));
 
-        try{
             ((JavascriptExecutor) driver).executeScript("mobile: swipeGesture", ImmutableMap.of(
                     "elementId", ((RemoteWebElement) element).getId(),
                     "direction", "up",
@@ -137,6 +142,7 @@ public class TestUtils {
         }
     }
 
+    @Step("Swiping Hero Animation ::::::::->")
     public void heroAnimationSwipe() {
         WebElement element = driver.findElement(By.xpath("//androidx.recyclerview.widget.RecyclerView[index=0]"));
         try{
@@ -150,6 +156,7 @@ public class TestUtils {
         }
     }
 
+    @Step("scrolling to section with ::::::::-> {text}")
     public void scrollToSectionWithText(String text) {
         try {
             driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().text(\"" +text+"\"))")).click();
@@ -158,14 +165,16 @@ public class TestUtils {
         }
     }
 
-    public void clickOnLogOut() {
+    @Step("scroll and Clicking On ::::::::-> {text}")
+    public void clickOnLogOut(String text) {
         try {
-            driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().text(\"Log out\"))")).click();
+            driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().text(\""+text+"\"))")).click();
         } catch (Exception e) {
             System.out.println("Found Issue on Log Out: " + e.getMessage());
         }
     }
 
+    @Step("Deleting text from ::::::::-> {element}")
     public void deleteInput(WebElement element) {
         try {
             element.clear();
@@ -174,6 +183,7 @@ public class TestUtils {
         }
     }
 
+    @Step("Validating CSS value for {element} on ::::::::->{cssValue} ::::::::->is equal {value}")
     public void getCssValue(WebElement element, String cssValue, String value) {
         try {
             Assert.assertTrue(element.getCssValue(cssValue).equals(value));
@@ -181,7 +191,7 @@ public class TestUtils {
             System.out.println("Failed to get CSS value" + e.getMessage());
         }
     }
-
+    @Step("Waiting {seconds} for the Invisibility of ::::::::->{webElement}")
     public void waitForElementInVisibility(WebElement webElement, long seconds) {
         try {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
@@ -189,6 +199,43 @@ public class TestUtils {
         } catch (Exception e) {
             System.out.println("Invisibility failed: " + e.getMessage());
         }
+    }
+
+    @Step("Long Tapping on ::::::::-> {WebElement}")
+    public void longPressOnElement(WebElement webElement) {
+
+        PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
+        Sequence longPress = new Sequence(finger, 1);
+
+        longPress.addAction(finger.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), webElement.getLocation().getX(), webElement.getLocation().getY()));
+        longPress.addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
+        longPress.addAction(new Pause(finger, Duration.ofSeconds(2)));
+
+        longPress.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
+
+        driver.perform(Collections.singletonList(longPress));
+    }
+
+    @Step("Perform Dragging from ::::::::-> {Source} to ::::::::-> {Target} Element")
+    public void dragAndDrop(WebElement source, WebElement target) {
+        Point sourcePoint = source.getLocation();
+        int startX = sourcePoint.getX();
+        int startY = sourcePoint.getY();
+
+        Point targetPoint = target.getLocation();
+        int endX = targetPoint.getX();
+        int endY = targetPoint.getY();
+
+        PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
+
+        Sequence dragAndDrop = new Sequence(finger, 1);
+        dragAndDrop.addAction(finger.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), startX, startY));
+        dragAndDrop.addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
+        dragAndDrop.addAction(new Pause(finger, Duration.ofMillis(500)));
+        dragAndDrop.addAction(finger.createPointerMove(Duration.ofMillis(1000), PointerInput.Origin.viewport(), endX, endY));
+        dragAndDrop.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
+
+        driver.perform(Arrays.asList(dragAndDrop));
     }
 
 

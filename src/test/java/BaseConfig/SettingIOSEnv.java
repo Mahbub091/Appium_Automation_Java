@@ -16,7 +16,7 @@ import java.time.Duration;
 public class SettingIOSEnv {
     public IOSDriver driver;
     public AppiumDriverLocalService service;
-    public ConfigReader config;
+
     @BeforeClass
     public IOSDriver setup() throws MalformedURLException {
         service = new AppiumServiceBuilder()
@@ -32,7 +32,7 @@ public class SettingIOSEnv {
         // Desired capabilities for iOS
         XCUITestOptions options = new XCUITestOptions();
         options.setDeviceName("iPhone 11 Pro Max")
-                .setPlatformName("17.4")
+                .setPlatformVersion("17.4")
                 .setBundleId("org.reactjs.native.example.wdioDemoApp")
                 .setNoReset(false);
 
@@ -41,6 +41,7 @@ public class SettingIOSEnv {
 
         return driver;
     }
+
     @AfterClass
     public void closeApp() {
         if (driver != null) {

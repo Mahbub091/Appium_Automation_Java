@@ -4,5 +4,38 @@
     <inspection_tool class="ThrowablePrintStackTrace" enabled="true" level="WARNING" enabled_by_default="true">
       <scope name="Tests" level="WARNING" enabled="false" />
     </inspection_tool>
+    <inspection_tool class="VulnerableLibrariesLocal" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="isIgnoringEnabled" value="true" />
+      <option name="ignoredModules">
+        <list>
+          <option value="Appium_Automation_Emulator" />
+          <option value="Appium_Automation_Emulator" />
+          <option value="Appium_Automation_Emulator" />
+          <option value="Appium_Automation_Emulator" />
+          <option value="Appium_Automation_Emulator" />
+          <option value="Appium_Automation_Emulator" />
+        </list>
+      </option>
+      <option name="ignoredPackages">
+        <list>
+          <option value="org.yaml:snakeyaml:1.23" />
+          <option value="com.google.guava:guava:31.1-jre" />
+          <option value="io.netty:netty-codec-http:4.1.92.Final" />
+          <option value="io.netty:netty-handler:4.1.92.Final" />
+          <option value="org.yaml:snakeyaml:1.24" />
+          <option value="commons-collections:commons-collections:3.2.2" />
+        </list>
+      </option>
+      <option name="ignoredReasons">
+        <list>
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+        </list>
+      </option>
+    </inspection_tool>
   </profile>
 </component>
