@@ -1,5 +1,5 @@
 <!-- master-suite.xml -->
-<suite name="MasterSuite" parallel="classes" thread-count="2">
+<suite name="MasterSuite">
     <suite-files>
         <suite-file path="AndroidTestSuite.xml"/>
         <suite-file path="IosTestSuite.xml"/>
