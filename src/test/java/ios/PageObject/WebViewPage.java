@@ -32,7 +32,7 @@ public class WebViewPage {
         iosUtils = new iOSTestUtils(iosDriver);
     }
 
-    @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name=\"WebView\"]")
+    @iOSXCUITFindBy(accessibility = "WebView")
     WebElement webViewMenu;
 
     /**

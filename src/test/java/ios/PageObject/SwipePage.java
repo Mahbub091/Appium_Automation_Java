@@ -32,9 +32,10 @@ public class SwipePage {
         PageFactory.initElements(new AppiumFieldDecorator(iosDriver, Duration.ofSeconds(10)), this);
         PageFactory.initElements(new AppiumFieldDecorator(iosDriver, Duration.ofSeconds(10)), this);
         iosUtils = new iOSTestUtils(iosDriver);
+        formsPage = new FormsPage(iosDriver);
     }
 
-    @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name=\"Swipe\"]")
+    @iOSXCUITFindBy(accessibility = "Swipe")
     WebElement swipeMenu;
 
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@name=\"Swipe horizontal\"]")

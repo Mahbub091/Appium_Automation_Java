@@ -45,7 +45,7 @@ public class HomePage {
 
     //XCUIElementTypeOther[@name="Home"]
 
-    @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name=\"Home\"]")
+    @iOSXCUITFindBy(accessibility = "Home")
     WebElement homeMenu;
 
     @iOSXCUITFindBy(className = "XCUIElementTypeScrollView")
