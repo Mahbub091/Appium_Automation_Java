@@ -22,13 +22,15 @@ public class SwipePage {
     int extended_element_find = 30;
 
     iOSTestUtils iosUtils;
+    FormsPage formsPage;
 
     public SwipePage(IOSDriver iosDriver) {
         PageFactory.initElements(new AppiumFieldDecorator(iosDriver, Duration.ofSeconds(10)), this);
         iosUtils = new iOSTestUtils(iosDriver);
+        formsPage = new FormsPage(iosDriver);
     }
 
-    @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name=\"Swipe\"]")
+    @iOSXCUITFindBy(accessibility = "Swipe")
     WebElement swipeMenu;
 
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@name=\"Swipe horizontal\"]")
@@ -39,7 +41,22 @@ public class SwipePage {
      */
 
     public void text () {
+        iosUtils.swipe(300,590,152,590);
+        iosUtils.swipe(300,590,152,590);
+        iosUtils.swipe(300,590,152,590);
+        iosUtils.swipe(300,590,152,590);
+        iosUtils.swipe(300,590,152,590);
+        iosUtils.swipe(150,590,300,590);
+        iosUtils.swipe(150,590,300,590);
+        iosUtils.swipe(150,590,300,590);
+        iosUtils.swipe(150,590,300,590);
+        iosUtils.swipe(150,590,300,590);
 
+        iosUtils.clickingOnElement(formsPage.formsMenu);
+        iosUtils.scrollToElement("Active");
+
+
+    iosUtils.wait(2);
 
     }
 }

@@ -34,7 +34,7 @@ public class LoginPage {
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@name=\"Login\"]")
     WebElement loginFormButton;
 
-    @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name=\"Login\"]")
+    @iOSXCUITFindBy(accessibility = "Login")
     WebElement loginMenu;
 
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@name=\"Login / Sign up Form\"]")

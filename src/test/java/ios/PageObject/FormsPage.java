@@ -27,7 +27,7 @@ public class FormsPage {
         iosUtils = new iOSTestUtils(iosDriver);
     }
 
-    @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name=\"Forms\"]")
+    @iOSXCUITFindBy(accessibility = "Forms")
     WebElement formsMenu;
 
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@name=\"Form components\"]")

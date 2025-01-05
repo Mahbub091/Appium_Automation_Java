@@ -39,7 +39,7 @@ public class HomePage {
 
     //XCUIElementTypeOther[@name="Home"]
 
-    @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name=\"Home\"]")
+    @iOSXCUITFindBy(accessibility = "Home")
     WebElement homeMenu;
 
     @iOSXCUITFindBy(className = "XCUIElementTypeScrollView")
@@ -62,17 +62,14 @@ public class HomePage {
     public void verifyingMenusToBeActive () {
         iosUtils.elementIsDisplayed(webViewPage.webViewMenu, extended_element_find);
         iosUtils.clickingOnElement(webViewPage.webViewMenu);
-        iosUtils.waitForElementInVisibility(this.homeScreen, short_element_find);
         iosUtils.elementIsDisplayed(loginPage.loginMenu, short_element_find);
         iosUtils.clickingOnElement(loginPage.loginMenu);
         iosUtils.verifyText(loginPage.loginMenuHeaderText, "Login / Sign up Form");
-        iosUtils.waitForElementInVisibility(loginPage.loginMenuHeaderText, short_element_find);
         iosUtils.elementIsDisplayed(formsPage.formsMenu, extended_element_find);
         iosUtils.clickingOnElement(formsPage.formsMenu);
         iosUtils.assertText(formsPage.formsMenuHeaderText, "Form components");
         iosUtils.elementIsDisplayed(swipePage.swipeMenu, extended_element_find);
         iosUtils.clickingOnElement(swipePage.swipeMenu);
-        iosUtils.waitForElementInVisibility(formsPage.formsMenuHeaderText, short_element_find);
         iosUtils.verifyText(swipePage.swipeMenuHeaderText, "Swipe horizontal");
         iosUtils.elementIsDisplayed(this.homeMenu, extended_element_find);
         iosUtils.clickingOnElement(this.homeMenu);
