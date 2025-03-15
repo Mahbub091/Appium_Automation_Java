@@ -155,7 +155,6 @@
                             <directory>${basedir}/reports</directory>
                             <includes>
                                 <include>**/*.tmp</include>
-                                <include>**/*.tmp</include>
                             </includes>
                             <excludes>
                                 <exclude>*.log</exclude>

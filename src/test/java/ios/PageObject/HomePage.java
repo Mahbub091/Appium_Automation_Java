@@ -4,12 +4,8 @@ import Utility.iOSTestUtils;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
-import io.appium.java_client.pagefactory.AppiumFieldDecorator;
-import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
-
-import java.time.Duration;
 
 import java.time.Duration;
 
@@ -30,7 +26,6 @@ public class HomePage {
 
     public HomePage(IOSDriver iosDriver) {
         PageFactory.initElements(new AppiumFieldDecorator(iosDriver, Duration.ofSeconds(10)), this);
-        PageFactory.initElements(new AppiumFieldDecorator(iosDriver, Duration.ofSeconds(10)), this);
         webViewPage= new WebViewPage(iosDriver);
         loginPage= new LoginPage(iosDriver);
         formsPage = new FormsPage(iosDriver);
@@ -38,7 +33,6 @@ public class HomePage {
         iosUtils = new iOSTestUtils(iosDriver);
     }
 
-    /*
     /*
      * Our Elements Will Be Stored Here.
      */
@@ -49,18 +43,23 @@ public class HomePage {
     WebElement homeMenu;
 
     @iOSXCUITFindBy(className = "XCUIElementTypeScrollView")
-    @iOSXCUITFindBy(className = "XCUIElementTypeScrollView")
     WebElement homeScreen;
 
-    @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name=\"WEBDRIVER I/O Demo app for the appium-boilerplate\"]")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name=\"WEBDRIVER I/O Demo app for the appium-boilerplate\"]")
     WebElement homeMenuText;
 
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@name=\"WEBDRIVER\"]")
-    @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@name=\"WEBDRIVER\"]")
     WebElement homeMenuHeaderText;
 
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@name=\"Demo app for the appium-boilerplate\"]")
+    WebElement homeScreen;
+
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name=\"WEBDRIVER I/O Demo app for the appium-boilerplate\"]")
+    WebElement homeMenuText;
+
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@name=\"WEBDRIVER\"]")
+    WebElement homeMenuHeaderText;
+
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@name=\"Demo app for the appium-boilerplate\"]")
     WebElement homeMenuSubText;
 

@@ -5,12 +5,8 @@ import com.github.javafaker.Faker;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
-import io.appium.java_client.pagefactory.AppiumFieldDecorator;
-import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
-
-import java.time.Duration;
 
 import java.time.Duration;
 
@@ -29,55 +25,16 @@ public class LoginPage {
 
     public LoginPage(IOSDriver iosDriver) {
         PageFactory.initElements(new AppiumFieldDecorator(iosDriver, Duration.ofSeconds(10)), this);
-        PageFactory.initElements(new AppiumFieldDecorator(iosDriver, Duration.ofSeconds(10)), this);
         iosUtils = new iOSTestUtils(iosDriver);
     }
 
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@name=\"Sign up\"]")
-    @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@name=\"Sign up\"]")
-    WebElement signUpFormButton;
-
-    @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@name=\"Login\"]")
-    @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@name=\"Login\"]")
     WebElement loginFormButton;
 
     @iOSXCUITFindBy(accessibility = "Login")
     WebElement loginMenu;
 
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@name=\"Login / Sign up Form\"]")
-    @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@name=\"Login / Sign up Form\"]")
-    WebElement loginMenuHeaderText;
-
-    @iOSXCUITFindBy(xpath = "//XCUIElementTypeTextField[@name=\"input-email\"]")
-    @iOSXCUITFindBy(xpath = "//XCUIElementTypeTextField[@name=\"input-email\"]")
-    WebElement loginEmailField;
-
-    @iOSXCUITFindBy(xpath = "//XCUIElementTypeSecureTextField[@name=\"input-password\"]")
-    @iOSXCUITFindBy(xpath = "//XCUIElementTypeSecureTextField[@name=\"input-password\"]")
-    WebElement loginPasswordField;
-
-    @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name=\"LOGIN\"]")
-    @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name=\"LOGIN\"]")
-    WebElement loginButton;
-
-    @iOSXCUITFindBy(xpath = "//XCUIElementTypeTextField[@name=\"input-email\"]")
-    @iOSXCUITFindBy(xpath = "//XCUIElementTypeTextField[@name=\"input-email\"]")
-    WebElement signUpFormEmail;
-
-    @iOSXCUITFindBy(xpath = "//XCUIElementTypeSecureTextField[@name=\"input-password\"]")
-    @iOSXCUITFindBy(xpath = "//XCUIElementTypeSecureTextField[@name=\"input-password\"]")
-    WebElement signUpFormPassword;
-
-    @iOSXCUITFindBy(xpath = "//XCUIElementTypeSecureTextField[@name=\"input-repeat-password\"]")
-    @iOSXCUITFindBy(xpath = "//XCUIElementTypeSecureTextField[@name=\"input-repeat-password\"]")
-    WebElement signUpFormConfirmPassword;
-
-    @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@name=\"SIGN UP\"]")
-    @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@name=\"SIGN UP\"]")
-    WebElement signUpButton;
-
-    @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name=\"Horizontal scroll bar, 1 page\"])[3]")
-    @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name=\"Horizontal scroll bar, 1 page\"])[3]")
     WebElement successButton;
 
 
