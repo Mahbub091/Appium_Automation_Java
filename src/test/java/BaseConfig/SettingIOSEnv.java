@@ -31,9 +31,9 @@ public class SettingIOSEnv {
 
         // Desired capabilities for iOS
         XCUITestOptions options = new XCUITestOptions();
-        options.setDeviceName("iPhone 11 Pro Max")
-                .setPlatformVersion("17.4")
-                .setBundleId("org.reactjs.native.example.wdioDemoApp")
+        options.setDeviceName("iPhone 16 Pro Max")
+                .setPlatformVersion("18.2")
+                .setBundleId("com.saucelabs.SwagLabsMobileApp")
                 .setNoReset(false);
 
         driver = new IOSDriver(new URL("http://127.0.0.1:4723/"), options);
