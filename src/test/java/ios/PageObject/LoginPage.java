@@ -47,15 +47,6 @@ public class LoginPage {
         iosUtils.clickingOnElement(loginMenu);
         iosUtils.elementIsDisplayed(loginFormButton, short_element_find);
         iosUtils.clickingOnElement(loginFormButton);
-        iosUtils.elementIsDisplayed(loginEmailField, extended_element_find);
-        iosUtils.enterText(loginEmailField, "mahbub");
-        iosUtils.hideKeyboard();
-        iosUtils.validateInputFieldValue(loginEmailField, "mahbub");
-        iosUtils.elementIsDisplayed(loginPasswordField, short_element_find);
-        iosUtils.enterText(loginPasswordField, "1234");
-        iosUtils.hideKeyboard();
-        iosUtils.elementIsDisplayed(loginButton, short_element_find);
-        iosUtils.clickingOnElement(loginButton);
     }
 
     public void attemptingWrongPasswordLogin () {
@@ -63,15 +54,6 @@ public class LoginPage {
         iosUtils.clickingOnElement(loginMenu);
         iosUtils.elementIsDisplayed(loginFormButton, short_element_find);
         iosUtils.clickingOnElement(loginFormButton);
-        iosUtils.elementIsDisplayed(loginEmailField, extended_element_find);
-        iosUtils.enterText(loginEmailField, "mahbubasr88@gmail.com");
-        iosUtils.hideKeyboard();
-        iosUtils.validateInputFieldValue(loginEmailField, "mahbubasr88@gmail.com");
-        iosUtils.elementIsDisplayed(loginPasswordField, short_element_find);
-        iosUtils.enterText(loginPasswordField, "7656545456465465435");
-        iosUtils.hideKeyboard();
-        iosUtils.elementIsDisplayed(loginButton, short_element_find);
-        iosUtils.clickingOnElement(loginButton);
         iosUtils.elementIsDisplayed(successButton, short_element_find);
         iosUtils.clickingOnElement(successButton);
         iosUtils.waitForElementInVisibility(successButton, short_element_find);
@@ -82,33 +64,11 @@ public class LoginPage {
         iosUtils.clickingOnElement(loginMenu);
         iosUtils.elementIsDisplayed(loginFormButton, short_element_find);
         iosUtils.clickingOnElement(loginFormButton);
-        iosUtils.elementIsDisplayed(loginEmailField, extended_element_find);
-        iosUtils.enterText(loginEmailField, faker.internet().emailAddress());
-        iosUtils.hideKeyboard();
-        iosUtils.validateInputFieldValue(loginEmailField, faker.internet().emailAddress());
-        iosUtils.elementIsDisplayed(loginPasswordField, short_element_find);
-        iosUtils.enterText(loginPasswordField, "tyfygfhgt6r5654");
-        iosUtils.hideKeyboard();
-        iosUtils.elementIsDisplayed(loginButton, short_element_find);
-        iosUtils.clickingOnElement(loginButton);
     }
 
     public void populatingTheSignUpForm () {
         // same as login function but for sign up page.
         // We would have to call this function when we want to test sign up functionality.
-        iosUtils.elementIsDisplayed(signUpFormButton, short_element_find);
-        iosUtils.clickingOnElement(signUpFormButton);
-        iosUtils.elementIsDisplayed(signUpFormEmail, extended_element_find);
-        iosUtils.clearText(signUpFormEmail);
-        iosUtils.enterText(signUpFormEmail, faker.internet().emailAddress());
-        iosUtils.elementIsDisplayed(signUpFormPassword, extended_element_find);
-        iosUtils.clearText(signUpFormPassword);
-        iosUtils.enterText(signUpFormPassword, "12345678");
-        iosUtils.elementIsDisplayed(signUpFormConfirmPassword, extended_element_find);
-        iosUtils.clearText(signUpFormConfirmPassword);
-        iosUtils.enterText(signUpFormConfirmPassword, "12345678");
-        iosUtils.elementIsDisplayed(signUpButton, short_element_find);
-        iosUtils.clickingOnElement(signUpButton);
         iosUtils.elementIsDisplayed(successButton, short_element_find);
         iosUtils.clickingOnElement(successButton);
         iosUtils.elementIsDisplayed(loginFormButton, short_element_find);

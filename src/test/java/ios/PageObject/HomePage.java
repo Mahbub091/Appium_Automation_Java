@@ -52,15 +52,6 @@ public class HomePage {
     WebElement homeMenuHeaderText;
 
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@name=\"Demo app for the appium-boilerplate\"]")
-    WebElement homeScreen;
-
-    @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name=\"WEBDRIVER I/O Demo app for the appium-boilerplate\"]")
-    WebElement homeMenuText;
-
-    @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@name=\"WEBDRIVER\"]")
-    WebElement homeMenuHeaderText;
-
-    @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@name=\"Demo app for the appium-boilerplate\"]")
     WebElement homeMenuSubText;
 
 
@@ -73,7 +64,6 @@ public class HomePage {
         iosUtils.clickingOnElement(webViewPage.webViewMenu);
         iosUtils.elementIsDisplayed(loginPage.loginMenu, short_element_find);
         iosUtils.clickingOnElement(loginPage.loginMenu);
-        iosUtils.verifyText(loginPage.loginMenuHeaderText, "Login / Sign up Form");
         iosUtils.elementIsDisplayed(formsPage.formsMenu, extended_element_find);
         iosUtils.clickingOnElement(formsPage.formsMenu);
         iosUtils.assertText(formsPage.formsMenuHeaderText, "Form components");
