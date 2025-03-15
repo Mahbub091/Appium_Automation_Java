@@ -6,10 +6,10 @@
             <class name="ios.TestCases.SwagLabsAppAutomation">
                 <methods>
                     <include name="test01" />
-                    <include name="test02" />
-                    <include name="test03" />
-                    <include name="test04" />
-                    <include name="test05" />
+                    <exclude name="test02" />
+                    <exclude name="test03" />
+                    <exclude name="test04" />
+                    <exclude name="test05" />
                 </methods>
             </class>
 

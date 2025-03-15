@@ -1,4 +1,4 @@
-SwagLabsDemoAPP Bundle ID: org.reactjs.native.example.SwagLabsMobileApp
+SwagLabsDemoAPP Bundle ID: com.saucelabs.SwagLabsMobileApp
 
 WDIO Demo App Bundle ID: org.reactjs.native.example.wdioDemoApp
 

@@ -38,7 +38,7 @@ public class SettingAndroidEnv {
         options.setPlatformName("android");
         options.setAutomationName(AutomationName.ANDROID_UIAUTOMATOR2);
         options.setDeviceName("emulator-5544");
-        options.setApp(System.getProperty("user.dir") + "/apps/WDioApp.apk");
+        options.setApp(System.getProperty("user.dir") + "/apps/Android.SauceLabs.Mobile.Sample.app.2.7.1.apk");
 
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
 
