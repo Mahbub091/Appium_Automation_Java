@@ -52,6 +52,15 @@ public class HomePage {
     WebElement homeMenuHeaderText;
 
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@name=\"Demo app for the appium-boilerplate\"]")
+    WebElement homeScreen;
+
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name=\"WEBDRIVER I/O Demo app for the appium-boilerplate\"]")
+    WebElement homeMenuText;
+
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@name=\"WEBDRIVER\"]")
+    WebElement homeMenuHeaderText;
+
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@name=\"Demo app for the appium-boilerplate\"]")
     WebElement homeMenuSubText;
 
 

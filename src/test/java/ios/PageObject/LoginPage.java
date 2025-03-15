@@ -29,39 +29,12 @@ public class LoginPage {
     }
 
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@name=\"Sign up\"]")
-    WebElement signUpFormButton;
-
-    @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@name=\"Login\"]")
     WebElement loginFormButton;
 
     @iOSXCUITFindBy(accessibility = "Login")
     WebElement loginMenu;
 
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@name=\"Login / Sign up Form\"]")
-    WebElement loginMenuHeaderText;
-
-    @iOSXCUITFindBy(xpath = "//XCUIElementTypeTextField[@name=\"input-email\"]")
-    WebElement loginEmailField;
-
-    @iOSXCUITFindBy(xpath = "//XCUIElementTypeSecureTextField[@name=\"input-password\"]")
-    WebElement loginPasswordField;
-
-    @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name=\"LOGIN\"]")
-    WebElement loginButton;
-
-    @iOSXCUITFindBy(xpath = "//XCUIElementTypeTextField[@name=\"input-email\"]")
-    WebElement signUpFormEmail;
-
-    @iOSXCUITFindBy(xpath = "//XCUIElementTypeSecureTextField[@name=\"input-password\"]")
-    WebElement signUpFormPassword;
-
-    @iOSXCUITFindBy(xpath = "//XCUIElementTypeSecureTextField[@name=\"input-repeat-password\"]")
-    WebElement signUpFormConfirmPassword;
-
-    @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@name=\"SIGN UP\"]")
-    WebElement signUpButton;
-
-    @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name=\"Horizontal scroll bar, 1 page\"])[3]")
     WebElement successButton;
 
 
