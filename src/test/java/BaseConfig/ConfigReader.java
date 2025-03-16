@@ -23,20 +23,20 @@ public class ConfigReader {
         }
     }
 
-    public String platformName(){
-        String platform_name = properties.getProperty("test_start_log");
-        if (platform_name != null)
-            return platform_name;
+    public String validUserName(){
+        String user_name = properties.getProperty("valid_test_user");
+        if (user_name != null)
+            return user_name;
         else
-            throw new RuntimeException("App Execution Platform Is Not Defined On The Config File");
+            throw new RuntimeException("Valid User Name Is Not Defined On The Config File");
     }
 
-    public String iOSBundleID(){
-        String ios_bundle = properties.getProperty("WDIOAPPBundleId");
-        if (ios_bundle != null)
-            return ios_bundle;
+    public String validPassword(){
+        String user_password = properties.getProperty("valid_test_password");
+        if (user_password != null)
+            return user_password;
         else
-            throw new RuntimeException("App bundle ID Is Not Defined On The Config File");
+            throw new RuntimeException("Valid User Password Is Not Defined On The Config File");
     }
 
 }
