@@ -22,68 +22,41 @@ public class LoginPage {
     int extended_element_find = 30;
 
     iOSTestUtils iosUtils;
+    ProductsPage productsPage;
 
     public LoginPage(IOSDriver iosDriver) {
         PageFactory.initElements(new AppiumFieldDecorator(iosDriver, Duration.ofSeconds(10)), this);
         iosUtils = new iOSTestUtils(iosDriver);
+        productsPage = new ProductsPage(iosDriver);
     }
 
-    @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@name=\"Sign up\"]")
-    WebElement loginFormButton;
+    @iOSXCUITFindBy(accessibility = "test-Username")
+    WebElement userNameInput;
 
-    @iOSXCUITFindBy(accessibility = "Login")
-    WebElement loginMenu;
+    @iOSXCUITFindBy(accessibility = "test-Password")
+    WebElement passwordInput;
 
-    @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@name=\"Login / Sign up Form\"]")
-    WebElement successButton;
+    @iOSXCUITFindBy(accessibility = "test-LOGIN")
+    WebElement loginButton;
 
 
     /**
      * We wil create our functions here.
      */
 
-    public void attemptingIncompleteEmailLogin () {
-        iosUtils.elementIsDisplayed(loginMenu, extended_element_find);
-        iosUtils.clickingOnElement(loginMenu);
-        iosUtils.elementIsDisplayed(loginFormButton, short_element_find);
-        iosUtils.clickingOnElement(loginFormButton);
-    }
-
-    public void attemptingWrongPasswordLogin () {
-        iosUtils.elementIsDisplayed(loginMenu, extended_element_find);
-        iosUtils.clickingOnElement(loginMenu);
-        iosUtils.elementIsDisplayed(loginFormButton, short_element_find);
-        iosUtils.clickingOnElement(loginFormButton);
-        iosUtils.elementIsDisplayed(successButton, short_element_find);
-        iosUtils.clickingOnElement(successButton);
-        iosUtils.waitForElementInVisibility(successButton, short_element_find);
-    }
-
-    public void attemptingRandomEmailLogin () {
-        iosUtils.elementIsDisplayed(loginMenu, extended_element_find);
-        iosUtils.clickingOnElement(loginMenu);
-        iosUtils.elementIsDisplayed(loginFormButton, short_element_find);
-        iosUtils.clickingOnElement(loginFormButton);
-    }
-
-    public void populatingTheSignUpForm () {
-        // same as login function but for sign up page.
-        // We would have to call this function when we want to test sign up functionality.
-        iosUtils.elementIsDisplayed(successButton, short_element_find);
-        iosUtils.clickingOnElement(successButton);
-        iosUtils.elementIsDisplayed(loginFormButton, short_element_find);
-        iosUtils.clickingOnElement(loginFormButton);
+public void userLogin() {
+        iosUtils.elementIsDisplayed(userNameInput, short_element_find);
+        iosUtils.clickingOnElement(userNameInput);
         iosUtils.wait(2);
-
+        iosUtils.enterText(userNameInput, "standard_user");
+        iosUtils.elementIsDisplayed(passwordInput, short_element_find);
+        iosUtils.clickingOnElement(passwordInput);
+        iosUtils.enterText(passwordInput, "secret_sauce");
+        iosUtils.elementIsDisplayed(loginButton, short_element_find);
+        iosUtils.clickingOnElement(loginButton);
+        iosUtils.elementIsDisplayed(productsPage.sauceLabsBackpack, short_element_find);
+        iosUtils.verifyText(productsPage.sauceLabsBackpack, "Sauce Labs Backpack2");
     }
-
-
-
-
-
-
-
-
 
 
 

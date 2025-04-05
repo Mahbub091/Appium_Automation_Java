@@ -3,13 +3,9 @@
 <suite name="IOS_Automation">
     <test name = "Test">
         <classes>
-            <class name="ios.TestCases.SwagLabsAppAutomation">
+            <class name="ios.TestCases.UserLogin">
                 <methods>
                     <include name="test01" />
-                    <include name="test02" />
-                    <include name="test03" />
-                    <include name="test04" />
-                    <include name="test05" />
                 </methods>
             </class>
 

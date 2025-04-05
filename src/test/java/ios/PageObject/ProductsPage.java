@@ -1,16 +1,18 @@
 package ios.PageObject;
 
 import Utility.iOSTestUtils;
+import com.github.javafaker.Faker;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import java.time.Duration;
 
-public class WebViewPage {
+public class ProductsPage {
+
+    Faker faker = new Faker();
 
     int pause_Short = 1;
     int pause_long = 2;
@@ -22,20 +24,24 @@ public class WebViewPage {
 
     iOSTestUtils iosUtils;
 
-    public WebViewPage(IOSDriver iosDriver) {
+    public ProductsPage(IOSDriver iosDriver) {
         PageFactory.initElements(new AppiumFieldDecorator(iosDriver, Duration.ofSeconds(10)), this);
         iosUtils = new iOSTestUtils(iosDriver);
     }
 
-    @iOSXCUITFindBy(accessibility = "WebView")
-    WebElement webViewMenu;
+    @iOSXCUITFindBy(accessibility = "test-Toggle")
+    WebElement userToggleIcon;
+
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@name=\"test-Item title\" and @label=\"Sauce Labs Backpack\"]")
+    WebElement sauceLabsBackpack;
+
 
     /**
      * We wil create our functions here.
      */
 
-    public void text () {
 
 
-    }
+
+
 }

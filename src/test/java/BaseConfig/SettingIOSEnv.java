@@ -31,8 +31,8 @@ public class SettingIOSEnv {
 
         // Desired capabilities for iOS
         XCUITestOptions options = new XCUITestOptions();
-        options.setDeviceName("iPhone 16 Pro Max")
-                .setPlatformVersion("18.2")
+        options.setDeviceName("iPhone 11 Pro Max")
+                .setPlatformVersion("17.4")
                 .setBundleId("com.saucelabs.SwagLabsMobileApp")
                 .setNoReset(false);
 

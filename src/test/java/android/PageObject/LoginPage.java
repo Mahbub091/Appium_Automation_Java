@@ -2,13 +2,15 @@ package android.PageObject;
 
 import BaseConfig.ConfigReader;
 import Utility.TestUtils;
+import com.github.javafaker.Faker;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
-public class SwagLabsHomePage {
+public class LoginPage {
+    Faker faker = new Faker();
     int pause_Short = 1;
     int pause_long = 2;
     int pause_extended = 3;
@@ -23,10 +25,11 @@ public class SwagLabsHomePage {
 
     ConfigReader configReader;
 
-    public SwagLabsHomePage(AndroidDriver driver) {
+    public LoginPage(AndroidDriver driver) {
         this.driver = driver;
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
         testUtils = new TestUtils(driver);
+        configReader = new ConfigReader();
     }
 
     /**
@@ -68,6 +71,18 @@ public class SwagLabsHomePage {
     /**
      * We wil create our functions here.
      */
+
+    public void wrongEmailLogin () {
+        String randomEmail = faker.internet().emailAddress();
+        String userPassword = configReader.validPassword();
+        testUtils.elementIsDisplayed(userNameField, long_element_find);
+        testUtils.enterText(userNameField, randomEmail);
+        testUtils.elementIsDisplayed(userPasswordField, long_element_find);
+        testUtils.enterText(userPasswordField, userPassword);
+        testUtils.elementIsDisplayed(loginButton, long_element_find);
+        testUtils.clickingOnElement(loginButton);
+        //Need to add the error login message
+    }
 
     public void userSuccessfulLogin (String userName, String userPassword) {
         testUtils.elementIsDisplayed(userNameField, long_element_find);
