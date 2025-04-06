@@ -41,3 +41,4 @@ build/
 target
 reports/allure-results/**
 reports/AppiumLog.txt
+reports/Logs/AppiumLog.txt

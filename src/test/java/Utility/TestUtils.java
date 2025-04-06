@@ -83,6 +83,7 @@ public class TestUtils {
     @Step("Entering {inputText} on ::::::::-> {element}")
     public void enterText(WebElement element, String inputText) {
         try {
+            element.clear();
             element.sendKeys(inputText);
         } catch (Exception e) {
             System.out.println("Text Input Failed: " + e.getMessage());
@@ -175,7 +176,7 @@ public class TestUtils {
     }
 
     @Step("Deleting text from ::::::::-> {element}")
-    public void deleteInput(WebElement element) {
+    public void deleteInput(WebElement element, String text) {
         try {
             element.clear();
         } catch (Exception e) {

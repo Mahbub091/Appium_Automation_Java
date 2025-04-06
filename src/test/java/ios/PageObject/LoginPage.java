@@ -1,5 +1,6 @@
 package ios.PageObject;
 
+import BaseConfig.ConfigReader;
 import Utility.iOSTestUtils;
 import com.github.javafaker.Faker;
 import io.appium.java_client.ios.IOSDriver;
@@ -22,68 +23,148 @@ public class LoginPage {
     int extended_element_find = 30;
 
     iOSTestUtils iosUtils;
+    ProductsPage productsPage;
+    ConfigReader configReader;
 
     public LoginPage(IOSDriver iosDriver) {
         PageFactory.initElements(new AppiumFieldDecorator(iosDriver, Duration.ofSeconds(10)), this);
         iosUtils = new iOSTestUtils(iosDriver);
+        productsPage = new ProductsPage(iosDriver);
+        configReader = new ConfigReader();
     }
 
-    @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@name=\"Sign up\"]")
-    WebElement loginFormButton;
+    @iOSXCUITFindBy(accessibility = "assets/src/img/swag-labs-logo.png")
+    WebElement logo;
 
-    @iOSXCUITFindBy(accessibility = "Login")
-    WebElement loginMenu;
+    @iOSXCUITFindBy(accessibility = "test-Username")
+    WebElement userNameInput;
 
-    @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@name=\"Login / Sign up Form\"]")
-    WebElement successButton;
+    @iOSXCUITFindBy(accessibility = "test-Password")
+    WebElement passwordInput;
+
+    @iOSXCUITFindBy(accessibility = "test-LOGIN")
+    WebElement loginButton;
+
+    @iOSXCUITFindBy(accessibility = "test-Error message")
+    WebElement errorMessage;
 
 
     /**
      * We wil create our functions here.
      */
 
-    public void attemptingIncompleteEmailLogin () {
-        iosUtils.elementIsDisplayed(loginMenu, extended_element_find);
-        iosUtils.clickingOnElement(loginMenu);
-        iosUtils.elementIsDisplayed(loginFormButton, short_element_find);
-        iosUtils.clickingOnElement(loginFormButton);
+public void userLogin() {
+        iosUtils.elementIsDisplayed(logo, short_element_find);
+        iosUtils.elementIsDisplayed(userNameInput, short_element_find);
+        iosUtils.clickingOnElement(userNameInput);
+        iosUtils.enterText(userNameInput, configReader.validUserName());
+        iosUtils.wait(1);
+    iosUtils.clickingOnElement(userNameInput);
+        iosUtils.enterText(userNameInput, configReader.validUserName());
+        iosUtils.elementIsDisplayed(passwordInput, short_element_find);
+        iosUtils.clickingOnElement(passwordInput);
+        iosUtils.enterText(passwordInput, configReader.validPassword());
+        iosUtils.elementIsDisplayed(loginButton, short_element_find);
+        iosUtils.clickingOnElement(loginButton);
+        iosUtils.waitForElementInVisibility(loginButton, short_element_find);
+        iosUtils.elementIsDisplayed(productsPage.sauceLabsBackpack, short_element_find);
+        iosUtils.verifyText(productsPage.sauceLabsBackpack, "Sauce Labs Backpack");
     }
 
-    public void attemptingWrongPasswordLogin () {
-        iosUtils.elementIsDisplayed(loginMenu, extended_element_find);
-        iosUtils.clickingOnElement(loginMenu);
-        iosUtils.elementIsDisplayed(loginFormButton, short_element_find);
-        iosUtils.clickingOnElement(loginFormButton);
-        iosUtils.elementIsDisplayed(successButton, short_element_find);
-        iosUtils.clickingOnElement(successButton);
-        iosUtils.waitForElementInVisibility(successButton, short_element_find);
+    public void wrongEmailLogin () {
+        iosUtils.elementIsDisplayed(logo, short_element_find);
+        iosUtils.elementIsDisplayed(userNameInput, short_element_find);
+        iosUtils.clickingOnElement(userNameInput);
+        iosUtils.enterText(userNameInput, faker.internet().emailAddress());
+        iosUtils.elementIsDisplayed(passwordInput, short_element_find);
+        iosUtils.clickingOnElement(passwordInput);
+        iosUtils.enterText(passwordInput, configReader.validPassword());
+        iosUtils.elementIsDisplayed(loginButton, short_element_find);
+        iosUtils.clickingOnElement(loginButton);
+        iosUtils.waitForElementInVisibility(logo, short_element_find);
+        iosUtils.elementIsDisplayed(errorMessage, short_element_find);
+        iosUtils.verifyText(errorMessage, "Username and password do not match any user in this service.");
     }
 
-    public void attemptingRandomEmailLogin () {
-        iosUtils.elementIsDisplayed(loginMenu, extended_element_find);
-        iosUtils.clickingOnElement(loginMenu);
-        iosUtils.elementIsDisplayed(loginFormButton, short_element_find);
-        iosUtils.clickingOnElement(loginFormButton);
+    public void validatingSuccessLogout () {
+    iosUtils.elementIsDisplayed(loginButton, long_element_find);
+    iosUtils.verifyText(loginButton, "LOGIN");
     }
 
-    public void populatingTheSignUpForm () {
-        // same as login function but for sign up page.
-        // We would have to call this function when we want to test sign up functionality.
-        iosUtils.elementIsDisplayed(successButton, short_element_find);
-        iosUtils.clickingOnElement(successButton);
-        iosUtils.elementIsDisplayed(loginFormButton, short_element_find);
-        iosUtils.clickingOnElement(loginFormButton);
-        iosUtils.wait(2);
-
+    public void wrongPasswordLogin () {
+        iosUtils.elementIsDisplayed(logo, short_element_find);
+        iosUtils.elementIsDisplayed(userNameInput, short_element_find);
+        iosUtils.clickingOnElement(userNameInput);
+        iosUtils.enterText(userNameInput, configReader.validUserName());
+        iosUtils.elementIsDisplayed(passwordInput, short_element_find);
+        iosUtils.clickingOnElement(passwordInput);
+        iosUtils.enterText(passwordInput, faker.internet().password());
+        iosUtils.elementIsDisplayed(loginButton, short_element_find);
+        iosUtils.clickingOnElement(loginButton);
+        iosUtils.waitForElementInVisibility(logo, short_element_find);
+        iosUtils.elementIsDisplayed(errorMessage, short_element_find);
+        iosUtils.verifyText(errorMessage, "Username and password do not match any user in this service.");
     }
 
+    public void emptyUserNameLogin () {
+        iosUtils.elementIsDisplayed(logo, short_element_find);
+        iosUtils.elementIsDisplayed(userNameInput, short_element_find);
+        iosUtils.clickingOnElement(userNameInput);
+        iosUtils.enterText(userNameInput, "");
+        iosUtils.elementIsDisplayed(passwordInput, short_element_find);
+        iosUtils.clickingOnElement(passwordInput);
+        iosUtils.enterText(passwordInput, configReader.validPassword());
+        iosUtils.elementIsDisplayed(loginButton, short_element_find);
+        iosUtils.clickingOnElement(loginButton);
+        iosUtils.waitForElementInVisibility(logo, short_element_find);
+        iosUtils.elementIsDisplayed(errorMessage, short_element_find);
+        iosUtils.verifyText(errorMessage, "Username is required");
+    }
 
+    public void emptyPasswordLogin () {
+        iosUtils.elementIsDisplayed(logo, short_element_find);
+        iosUtils.elementIsDisplayed(userNameInput, short_element_find);
+        iosUtils.clickingOnElement(userNameInput);
+        iosUtils.enterText(userNameInput, configReader.validUserName());
+        iosUtils.elementIsDisplayed(passwordInput, short_element_find);
+        iosUtils.clickingOnElement(passwordInput);
+        iosUtils.enterText(passwordInput, "");
+        iosUtils.elementIsDisplayed(loginButton, short_element_find);
+        iosUtils.clickingOnElement(loginButton);
+        iosUtils.waitForElementInVisibility(logo, short_element_find);
+        iosUtils.elementIsDisplayed(errorMessage, short_element_find);
+        iosUtils.verifyText(errorMessage, "Password is required");
+    }
 
+    public void lockedOutUserLogin () {
+        iosUtils.elementIsDisplayed(logo, short_element_find);
+        iosUtils.elementIsDisplayed(userNameInput, short_element_find);
+        iosUtils.clickingOnElement(userNameInput);
+        iosUtils.enterText(userNameInput, configReader.locked_out_user());
+        iosUtils.elementIsDisplayed(passwordInput, short_element_find);
+        iosUtils.clickingOnElement(passwordInput);
+        iosUtils.enterText(passwordInput, configReader.validPassword());
+        iosUtils.elementIsDisplayed(loginButton, short_element_find);
+        iosUtils.clickingOnElement(loginButton);
+        iosUtils.waitForElementInVisibility(logo, short_element_find);
+        iosUtils.elementIsDisplayed(errorMessage, short_element_find);
+        iosUtils.verifyText(errorMessage, "Sorry, this user has been locked out.");
+    }
 
-
-
-
-
+    public void problemUserLogin () {
+        iosUtils.elementIsDisplayed(logo, short_element_find);
+        iosUtils.elementIsDisplayed(userNameInput, short_element_find);
+        iosUtils.clickingOnElement(userNameInput);
+        iosUtils.enterText(userNameInput, configReader.problem_user());
+        iosUtils.elementIsDisplayed(passwordInput, short_element_find);
+        iosUtils.clickingOnElement(passwordInput);
+        iosUtils.enterText(passwordInput, configReader.validPassword());
+        iosUtils.elementIsDisplayed(loginButton, short_element_find);
+        iosUtils.clickingOnElement(loginButton);
+        iosUtils.waitForElementInVisibility(logo, short_element_find);
+        iosUtils.elementIsDisplayed(errorMessage, short_element_find);
+        iosUtils.verifyText(errorMessage, "Sorry, this user has been locked out.");
+    }
 
 
 

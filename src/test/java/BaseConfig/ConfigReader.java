@@ -39,4 +39,20 @@ public class ConfigReader {
             throw new RuntimeException("Valid User Password Is Not Defined On The Config File");
     }
 
+    public String locked_out_user(){
+        String user_name = properties.getProperty("locked_out_user");
+        if (user_name != null)
+            return user_name;
+        else
+            throw new RuntimeException("Locked Out User Name Is Not Defined On The Config File");
+    }
+
+    public String problem_user(){
+        String user_name = properties.getProperty("problem_user");
+        if (user_name != null)
+            return user_name;
+        else
+            throw new RuntimeException("Problem User Name Is Not Defined On The Config File");
+    }
+
 }
