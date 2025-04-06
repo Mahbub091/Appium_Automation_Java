@@ -6,6 +6,12 @@
             <class name="ios.TestCases.UserLogin">
                 <methods>
                     <include name="test01" />
+                    <include name="test02" />
+                    <include name="test03" />
+                    <include name="test04" />
+                    <include name="test05" />
+                    <include name="test06" />
+                    <include name="test07" />
                 </methods>
             </class>
 

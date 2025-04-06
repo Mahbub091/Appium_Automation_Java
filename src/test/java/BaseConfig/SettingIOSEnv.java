@@ -34,9 +34,16 @@ public class SettingIOSEnv {
         options.setDeviceName("iPhone 11 Pro Max")
                 .setPlatformVersion("17.4")
                 .setBundleId("com.saucelabs.SwagLabsMobileApp")
-                .setNoReset(false);
+                .setNoReset(false)
+                .setAutoAcceptAlerts(true);
 
-        driver = new IOSDriver(new URL("http://127.0.0.1:4723/"), options);
+        try {
+            driver = new IOSDriver(new URL("http://127.0.0.1:4723/"), options);
+            System.out.println("iOS driver initialized successfully");
+        } catch (Exception e) {
+            System.err.println("Failed to initialize iOS driver: " + e.getMessage());
+            e.printStackTrace();
+        }
         System.out.println("Starting iOS App through Appium Server");
 
         return driver;
