@@ -156,7 +156,6 @@ public void userLogin() {
         iosUtils.elementIsDisplayed(userNameInput, short_element_find);
         iosUtils.clickingOnElement(userNameInput);
         iosUtils.enterText(userNameInput, configReader.problem_user());
-        iosUtils.enterText(userNameInput, configReader.problem_user());
         iosUtils.elementIsDisplayed(passwordInput, short_element_find);
         iosUtils.clickingOnElement(passwordInput);
         iosUtils.enterText(passwordInput, configReader.validPassword());
