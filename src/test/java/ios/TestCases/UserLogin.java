@@ -36,7 +36,7 @@ public class UserLogin extends SettingIOSEnv {
         loginPage.wrongPasswordLogin();
     }
 
-    @Test(testName = "UserNamrEmptyLogin", description = "Verify Login Attempt Without Username Credentials")
+    @Test(testName = "UserNameEmptyLogin", description = "Verify Login Attempt Without Username Credentials")
     public void test04() {
         loginPage.emptyUserNameLogin();
     }
