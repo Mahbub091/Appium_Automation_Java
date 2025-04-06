@@ -3,10 +3,14 @@
 <suite name="Android_Automation">
     <test name = "Test">
         <classes>
-            <class name="android.TestCases.SwagLabsLoginTests">
+            <class name="android.TestCases.LoginTest">
                 <methods>
                     <include name="test01" />
                     <include name="test02" />
+                    <include name="test03" />
+                    <include name="test04" />
+                    <include name="test05" />
+                    <include name="test06" />
                 </methods>
             </class>
 

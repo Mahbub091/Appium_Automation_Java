@@ -32,6 +32,11 @@ public class LoginPage {
         configReader = new ConfigReader();
     }
 
+    String randomEmail = faker.internet().emailAddress();
+    String randomPassword = faker.internet().password();
+    String userNamePlaceHolder = "Username";
+    String passwordPlaceHolder = "Password";
+
     /**
      * Our Elements Will Be Stored Here.
      */
@@ -66,6 +71,9 @@ public class LoginPage {
     @AndroidFindBy(xpath = "//android.view.ViewGroup[@content-desc=\"test-LOGOUT\"]/android.widget.TextView")
     WebElement userLogoutButton;
 
+    @AndroidFindBy(xpath = "//android.view.ViewGroup[@content-desc=\"test-Error message\"]/android.widget.TextView")
+    WebElement errorMessage;
+
 
 
     /**
@@ -73,15 +81,17 @@ public class LoginPage {
      */
 
     public void wrongEmailLogin () {
-        String randomEmail = faker.internet().emailAddress();
-        String userPassword = configReader.validPassword();
+
         testUtils.elementIsDisplayed(userNameField, long_element_find);
         testUtils.enterText(userNameField, randomEmail);
         testUtils.elementIsDisplayed(userPasswordField, long_element_find);
-        testUtils.enterText(userPasswordField, userPassword);
+        testUtils.enterText(userPasswordField, randomPassword);
         testUtils.elementIsDisplayed(loginButton, long_element_find);
         testUtils.clickingOnElement(loginButton);
-        //Need to add the error login message
+        testUtils.elementIsDisplayed(errorMessage, short_element_find);
+        testUtils.verifyText(errorMessage, "Username and password do not match any user in this service.");
+        testUtils.deleteInput(userNameField, userNamePlaceHolder);
+        testUtils.deleteInput(userPasswordField, passwordPlaceHolder);
     }
 
     public void userSuccessfulLogin (String userName, String userPassword) {
@@ -103,6 +113,58 @@ public class LoginPage {
         testUtils.waitForElementInVisibility(allItemsMenu, long_element_find);
     }
 
+    public void wrongPasswordLogin () {
+        testUtils.elementIsDisplayed(userNameField, extended_element_find);
+        testUtils.enterText(userNameField, configReader.validUserName());
+        testUtils.elementIsDisplayed(userPasswordField, long_element_find);
+        testUtils.enterText(userPasswordField, faker.internet().password());
+        testUtils.elementIsDisplayed(loginButton, short_element_find);
+        testUtils.clickingOnElement(loginButton);
+        testUtils.elementIsDisplayed(errorMessage, short_element_find);
+        testUtils.assertText(errorMessage, "Username and password do not match any user in this service.");
+        testUtils.deleteInput(userNameField, userNamePlaceHolder);
+        testUtils.deleteInput(userPasswordField, passwordPlaceHolder);
+    }
+
+    public void blankEmailValidation () {
+        testUtils.elementIsDisplayed(userNameField, extended_element_find);
+//        testUtils.enterText(userNameField, configReader.validUserName());
+        testUtils.elementIsDisplayed(userPasswordField, long_element_find);
+        testUtils.enterText(userPasswordField, faker.internet().password());
+        testUtils.elementIsDisplayed(loginButton, short_element_find);
+        testUtils.clickingOnElement(loginButton);
+        testUtils.elementIsDisplayed(errorMessage, short_element_find);
+        testUtils.assertText(errorMessage, "Username is required");
+        testUtils.deleteInput(userNameField, userNamePlaceHolder);
+        testUtils.deleteInput(userPasswordField, passwordPlaceHolder);
+    }
+
+    public void blankPasswordValidation () {
+        testUtils.elementIsDisplayed(userNameField, extended_element_find);
+        testUtils.enterText(userNameField, configReader.validUserName());
+        testUtils.elementIsDisplayed(userPasswordField, long_element_find);
+//        testUtils.enterText(userPasswordField, faker.internet().password());
+        testUtils.elementIsDisplayed(loginButton, short_element_find);
+        testUtils.clickingOnElement(loginButton);
+        testUtils.elementIsDisplayed(errorMessage, short_element_find);
+        testUtils.assertText(errorMessage, "Password is required");
+        testUtils.deleteInput(userNameField, userNamePlaceHolder);
+        testUtils.deleteInput(userPasswordField, passwordPlaceHolder);
+    }
+
+    public void blockedUserValidation () {
+        testUtils.elementIsDisplayed(userNameField, extended_element_find);
+        testUtils.enterText(userNameField, configReader.locked_out_user());
+        testUtils.elementIsDisplayed(userPasswordField, long_element_find);
+        testUtils.enterText(userPasswordField, configReader.validPassword());
+        testUtils.elementIsDisplayed(loginButton, short_element_find);
+        testUtils.clickingOnElement(loginButton);
+        testUtils.elementIsDisplayed(errorMessage, short_element_find);
+        testUtils.assertText(errorMessage, "Sorry, this user has been locked out.");
+        testUtils.deleteInput(userNameField, userNamePlaceHolder);
+        testUtils.deleteInput(userPasswordField, passwordPlaceHolder);
+    }
+
     public void userLogOut () {
         testUtils.elementIsDisplayed(userMenu, long_element_find);
         testUtils.clickingOnElement(userMenu);
@@ -114,5 +176,7 @@ public class LoginPage {
         testUtils.clickingOnElement(userLogoutButton);
         testUtils.waitForElementInVisibility(userMenu, long_element_find);
         testUtils.elementIsDisplayed(userNameField, long_element_find);
+        testUtils.deleteInput(userNameField, userNamePlaceHolder);
+        testUtils.deleteInput(userPasswordField, passwordPlaceHolder);
     }
 }
